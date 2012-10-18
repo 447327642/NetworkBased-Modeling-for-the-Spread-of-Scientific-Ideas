@@ -12,9 +12,9 @@ Rzgar Hosseini
 
 ## General Introduction
 
-(States your motivation clearly: why is it important / interesting to solve this problem?)
-(Add real-world examples, if any)
-(Put the problem into a historical context, from what does it originate? Are there already some proposed solutions?)
+In contrast to opinions, scientific ideas are considered to be unlimited in number. Especially due to its high dynamics conditioned by human capacity of invention, the field of science constantly abandons old ideas, when some better, new theories are developed. New ideas in science emerge only very rarely; however, they tend to spread very fast and are eroded slowly, until replaced by newer ones. 
+
+To simulate real-world situations, several groups looked at grid-based simulations of agents and spread of their opinions, allowing unrestricted amount of ideas to flow through system, by introducing innovation rate as property of individual agents (Bornholdt et al., 2011). We extend these studies by setting the above-mentioned model on the network, to approximate the model to true world structure. 
 
 ## The Model
 
@@ -47,10 +47,13 @@ What interactions occur between innovation, skepticism, connectivity, and levels
 
 ## Expected Results
 
-Based on previous research, we expect an interaction between network structure and the spread of opinions. In previous research using a grid instead of a network, the system was very dynamic, fluctuating between having one or two predominant ideas. We also predict that the connectivity of an agent in the network will be more important than innovation for the spread of ideas.  Thus, poorly connected nodes, even if highly innovative, will not be the origin of a predominant idea. 
+Based on previous research, we expect an interaction between network structure and the spread of opinions. In previous research using a grid instead of a network, the system was very dynamic, fluctuating between having one or two predominant ideas. 
 
-Previous research using a grid instead of a network has shown that, given uniform levels of innovation, the life span of ideas did not change, but their speed of degradation did.
+We also predict that the connectivity of an agent in the network will be more important than innovation for the spread of ideas.  Thus, poorly connected nodes, even if highly innovative, will not be the origin of a predominant idea. 
 
+Previous research using a grid instead of a network has shown that, at different but uniform levels of innovation, the life span of ideas did not change, but their speed of degradation did. We expect similar behavior on netwoks if unifrom innovation rates are introduced. However, we expect slower idea propagation through the system (rise), when coming from low-connected nodes. With introducing the concept of varying innovation rates to different agents, we expect more dynamic behavior, with unequal period lengths corresponding to varying node connectivities and innovation rates. Scepticism of agents in network would potentially also prolong the individual paradigm periods.
+
+We would also expect a mutual interaction between network structure and scientific idea formation.
 
 ## References 
 
@@ -58,7 +61,7 @@ Bornholdt, S., Mogens Høgh Jensen, and Kim Sneppen. "Emergence and Decline of S
 
 Holme, Petter, and Mark EJ Newman. "Nonequilibrium phase transition in the coevolution of networks and opinions." Physical Review E 74, no. 5 (2006): 056108.
 
-(Code / Projects Reports of the previous year)
+S. Brugger and C. Schwirzer, "Opinion formation by "employed agents" in social networks." Project work done in the course Lecture with Computer Exercises: Modelling and Simulating Social Systems with MATLAB, May 2011, 2011.
 
 
 ## Research Methods
