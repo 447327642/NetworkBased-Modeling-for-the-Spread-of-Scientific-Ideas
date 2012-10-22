@@ -3,9 +3,9 @@
 
 > * Group Name: Crazy Scientists Without Opinions
 > * Group participants' names: 
-Mayra Bermudez
-Veronika Boskova
-Sarah Grimm
+Mayra Bermudez,
+Veronika Boskova,
+Sarah Grimm,
 Rzgar Hosseini
 
 > * Project Title: Network-Based Modeling for the Spread of Scientific Ideas
