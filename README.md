@@ -12,9 +12,9 @@ Rzgar Hosseini
 
 ## General Introduction
 
-In contrast to opinions, scientific ideas are considered to be unlimited in number. Especially due to its high dynamics conditioned by human capacity of invention, the field of science constantly abandons old ideas, when some better, new theories are developed. New ideas in science emerge only very rarely; however, they tend to spread very fast and are eroded slowly, until replaced by newer ones. 
+How do scientific ideas spread? The field of science constantly abandons old ideas when some better, new theories are developed. New ideas in science emerge only very rarely, perhaps due to human capacity of invention; however, they tend to spread very quickly and are eroded slowly, until replaced by newer ones. 
 
-To simulate real-world situations, several groups looked at grid-based simulations of agents and spread of their opinions, allowing unrestricted amount of ideas to flow through system, by introducing innovation rate as property of individual agents (Bornholdt et al., 2011). We extend these studies by setting the above-mentioned model on the network, to approximate the model to true world structure. 
+To simulate real-world situations, several groups looked at grid-based simulations of agents and spread of their opinions, allowing unrestricted amount of ideas to flow through the system, by introducing innovation rate as property of individual agents (Bornholdt et al., 2011). We extend these studies by setting the above-mentioned model on the network, to approximate the model to true world structure. 
 
 ## The Model
 
@@ -22,38 +22,40 @@ We want our model to include the following parameters:
 
 Probability of innovation (independent or dependent): This value represents the probability of each agent (node in the network) to produce a new ‘idea’.  Infinitely many new ideas may arise. We want to observe the effects of changing it from a uniform value for all agents to one that varies between agents. This variation can either be defined by randomly choosing agents (hence, providing them with different ‘personality’ types or innovation) or by making it proportional to the connectivity of the node. This second definition is encouraged by the idea that to be innovative one must be well connected to other agents in a network.
 
-Probability of changing the structure of the network: this parameter will represent the likeliness of agents to change their connections with agents they do not share opinions (or ideas) with to those with which they do. This will allow us to investigate whether the structure of the network affects opinions or whether opinions affect the structure of the network. 
+Probability of a node to change an edge: this parameter will represent the likeliness of agents to change their connections with agents they do not share opinions (or ideas) with to those with which they do. This will allow us to investigate whether the structure of the network affects opinions or whether opinions affect the structure of the network.
 
-Probability of skepticism: this value has not been included in previous models. By delaying the time in which a randomly chosen node (agent) is updated, we hope to represent an agent’s skepticism or time to accept a new idea. 
-
-Probability of changing opinion/idea: the possible ideas that an agent (node) can adopt are the ones that it is directly connected to. The probability of adopting any of these possible ideas will be 
+Probability of changing opinion/idea: this probability is 1 - (probability of changing structure). Different forms of contagion will be explored. A simple contagion would be that the possible ideas that an agent (node) can adopt are the ones that it is directly connected to, and thus the probability of adopting any of these possible ideas will be 
 (Number of connected agents that have this idea) / (number of agents that are connected to the agent in question)
 
-Potentially: we want to vary whether agents can or cannot come back to a previously held idea.
+Still a potential parameter: rate of innovation for agents differ.
+
 
 
 ## Fundamental Questions
 
-How are novel ideas spread in networks?
+We would like to investigate two main influences: the influence of the structure of a network on the opinions in the network, and the influence of the opinions in a network on its structure.
 
-Do networks shape opinions and ideas, or do opinions and ideas shape networks? We plan to investigate the distribution of the sizes of clusters in the network based on changing the probability of changing the structure of the network.
+I. Structure --> Opinion
 
-Do life spans and speeds of degradation of ideas change depending on individual levels of agent innovation? Do they change by introducing skepticism of agents?
+Starting with different network structures (caveman, scale free, random, and small world networks) and given a low probability of changing connections between nodes (thus a high probability of a node to change opinion), we will observe the resulting characteristics of the networks' opinions. Opinion characteristics will be determined by values such as the neighborhood index and average distance between similar opinions.
 
-Do predominant ideas originate from specific kinds of agents? What is more important for the spread of ideas: good network connectivity, or high levels of innovation? We plan to keep track of which agents produced innovative ideas to be able to investigate this question.
 
-What interactions occur between innovation, skepticism, connectivity, and levels of changing network structure? 
+II. Opinion --> Structure
+Starting with different opinion distributions (random or structure-related) and given a high probability of changing connections between nodes (therefore a low probability of a node to change opinion), we will characterize the resulting network structures. The network structures will be characterized by clustering coefficients, average distances, and the distribution of node degree.
+
+
+The values that will be used to characterize opinions and structures will also be recorded during the simulations in order to observe the rates of change. Additionally, time and frequency of opinion dominance will be included in these values.
+
 
 
 ## Expected Results
 
 Based on previous research, we expect an interaction between network structure and the spread of opinions. In previous research using a grid instead of a network, the system was very dynamic, fluctuating between having one or two predominant ideas. 
 
-We also predict that the connectivity of an agent in the network will be more important than innovation for the spread of ideas.  Thus, poorly connected nodes, even if highly innovative, will not be the origin of a predominant idea. 
-
-Previous research using a grid instead of a network has shown that, at different but uniform levels of innovation, the life span of ideas did not change, but their speed of degradation did. We expect similar behavior on netwoks if uniform innovation rates are introduced. However, we expect slower idea propagation through the system (rise), when coming from low-connected nodes. With introducing the concept of varying innovation rates to different agents, we expect more dynamic behavior, with unequal period lengths corresponding to varying node connectivities and innovation rates. Skepticism of agents in network would potentially also prolong the individual paradigm periods.
+Previous research using a grid instead of a network has shown that, at different but uniform levels of innovation, the life span of ideas did not change, but their speed of degradation did. We expect similar behavior on netwoks if uniform innovation rates are introduced. However, we expect slower idea propagation through the system (rise), when coming from low-connected nodes.
 
 We would also expect a mutual interaction between network structure and scientific idea formation.
+
 
 ## References 
 
