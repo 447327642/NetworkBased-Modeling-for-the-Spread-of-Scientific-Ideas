@@ -1,11 +1,11 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%% code adopted from                                     %%%
-%%% Modeling and Simulating Social Systems with MATLAB    %%%
-%%% http://www.soms.ethz.ch/teaching/MatlabFall2012       %%%
-%%% Authors: Stefan Brugger and Cristoph Schwirzer, 2011  %%%
+%%% code adopted from %%%
+%%% Modeling and Simulating Social Systems with MATLAB %%%
+%%% http://www.soms.ethz.ch/teaching/MatlabFall2012 %%%
+%%% Authors: Stefan Brugger and Cristoph Schwirzer, 2011 %%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-function A = randomgraph(n, p)
+function  final= step1_randomgraph(n, p)
 % Generates an undirected random graph (without self-loops) of size n (as
 % described in the Erdoes-Renyi model)
 %
@@ -14,14 +14,14 @@ function A = randomgraph(n, p)
 % p: [1]: probability that node i and node j, i != j, are connected by an edge
 %
 % OUTPUT
-% A: [n n] sparse symmetric adjacency matrix representing the generated graph
+% final: [n n] full symmetric adjacency matrix representing the generated graph
 
 % Note: A generation based on sprandsym(n, p) failed (for some values of p
 % sprandsym was far off from the expected number of n*n*p non-zeros), therefore
 % this longish implementation instead of just doing the following:
 %
-%    B = sprandsym(n, p);
-%    A = (B-diag(diag(B))~=0);
+% B = sprandsym(n, p);
+% A = (B-diag(diag(B))~=0);
 %
 
 % Idea: first generate the number of non-zero values in every row for a general
@@ -37,7 +37,7 @@ v = rand(1, n);
 % parameters n and p at values 0 to n. Afterwards match the sorted random
 % 0-1-values to those cdf-values, i.e. associate a binomial distributed value
 % with each value in r. Each value in v also corresponds to a value in r:
-% permute the values in rowSize s.t. they correspond to the order given in v. 
+% permute the values in rowSize s.t. they correspond to the order given in v.
 [r index] = sort(v); % i.e. v(index) == r holds
 rowSize = zeros(1, n);
 j = 0;
@@ -67,5 +67,5 @@ upperTriu = find(I<J);
 I = I(upperTriu);
 J = J(upperTriu);
 A = sparse([I;J], [J;I], ones(1, 2*size(I, 2)), n, n);
-
+final=full(A);
 end % random_graph(...)
