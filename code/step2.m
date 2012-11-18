@@ -20,7 +20,7 @@ for t=1:t_end
     a1=rand();
     b1=phi;
     if a1<b1 %%% i.e with probability phi to reorganize the network
-       v=find(mat(x1,:)==1); %%% defining the neighbours of x1
+       v=find(mat(x1,:)==1 && vec~=vec(x1)); %%% defining the neighbours of x1 that do not have the same idea as x1
        x2=v(ceil(rand()*length(v))); %%% choosing one neighbour randomly to remove connection with
        mat(x1,x2)=0; %%% deletion of the edge between x1 and x2
        mat(x2,x1)=0; %%% deletion of the edge between x2 and x1
@@ -34,7 +34,7 @@ for t=1:t_end
        end
        mat(x1,x3)=1; %%% formation of new edge between x1 and x3
        mat(x3,x1)=1; %%% formation of new edge between x3 and x1
-    else  %%% otherwise change the idea of x1 to that of one of it's randomly chosen neighbours
+    else  %%% otherwise change the idea of x1 to that of one that reaches the threshold
        v2=find(mat(x1,:)==1); %%% defining the neighbours of x1
        vv=vec(v2); %%% the corresponding ideas of the neighbours
        vvv=unique(vv); %%% vector of all the distinct ideas
@@ -51,8 +51,8 @@ for t=1:t_end
            vec(x1)=candidates(chosen);  %%% change the idea of x1 to the chosen idea 
        end
                               
-       x2=v(ceil(rand()*length(v))); %%% choosing one neighbour randomly to whose idea, the idea of x1 will be changed
-       vec(x1)=vec(x2); %%% change the idea of x1 to that of x2 
+       %x2=v(ceil(rand()*length(v))); %%% choosing one neighbour randomly to whose idea, the idea of x1 will be changed
+       %vec(x1)=vec(x2); %%% change the idea of x1 to that of x2 
     end
     
     y=ceil(rand()*n); %%%choosing one person randomly for coming up with a new idea
