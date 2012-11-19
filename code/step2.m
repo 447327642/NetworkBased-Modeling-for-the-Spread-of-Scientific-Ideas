@@ -13,7 +13,9 @@ function [mat, vec, dominant_freq, most_freq] = step2(t_end,phi,alpha,mat,vec,p,
 %%% most_freq: the vector holding the index of dominating idea in each time
 
 most_freq=zeros(1,t_end); %%% Vector for storing the index of the dominating idea in each time step.
-dominant_freq=zeros(1,t_end); %%% Vector for storing the frequency of dominant idea in each time step. 
+dominant_freq=zeros(1,t_end); %%% Vector for storing the frequency of dominant idea in each time step.
+a=size(mat);
+n=a(1);
 
 for t=1:t_end 
     x1=ceil(rand()*n); %%% choosing one person randomly for network reorganization or changing idea
@@ -65,6 +67,6 @@ for t=1:t_end
     end
     %%%%
     most_freq(t)=mode(vec); %%% the dominant idea at time t
-    dominant_freq(t)=length(vec==most_freq); %%% the frequency of the dominant idea at time t
+    dominant_freq(t)=length(vec==most_freq(t)); %%% the frequency of the dominant idea at time t
 end  
 end
