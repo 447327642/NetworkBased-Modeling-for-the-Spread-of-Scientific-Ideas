@@ -70,7 +70,7 @@ alpha=0.01; %%% innovation rate
 threshold=0.1; %%% threshold for complex contagion
 [mat2,vec2,dominant_freq,most_freq]=step2(t_end,phi,alpha,mat1,vec1,p,threshold); %%% obtaining the final matrix and vector after running simulation.
 
-
+%%% results of step4 are needed for step3, that's why it comes before step3. It is just a naming convention :)
 %% Step4: Results for idea to structure %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%% step4a: clustering coefficient of the final network %%%%%%%%
