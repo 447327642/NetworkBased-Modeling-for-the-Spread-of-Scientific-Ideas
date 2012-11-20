@@ -2,7 +2,7 @@
 %% Step1: Definition of Different initial matrices and vectors %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% The following three parameters will remain constant during this study,
 %%% so won't play with them %%%
-n=10000; %% the number of agents
+n=1000; %% the number of agents
 m=100; %% initial number of clusters for caveman matrix
 p=100; %% initial number of opinions
 %%%%%%%%%%%%%%%%%%%% For each simulation, we must choose one of the following idea vectors %%%%%%%%%%%%%%%%%%%%%%%
@@ -40,7 +40,7 @@ end
 
 
 %%%%%%%%%%%%%%%%%%%% For each simulation, we must choose one of the following connectivity matrices %%%%%%%%%%%%%%%%%%%%%%%
-choice2=menu('pleae choose your connectivity matrix','Caveman','Random','Scale free','Small world');
+choice2=menu('please choose your connectivity matrix','Caveman','Random','Scale free','Small world');
 switch choice2
     case 1 
          %%% option 1: Caveman Connectivity Matrix
@@ -62,30 +62,14 @@ switch choice2
 end
 
 %% Step2: Simulation %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-t_end=30000; %%% number of iterations
+
+t_end=1; %%% number of iterations
 %%% The following parameters should be modified in each different simulation
 phi=0.1; %%% network reorganization rate
 alpha=0.01; %%% innovation rate
 threshold=0.1; %%% threshold for complex contagion
 [mat2,vec2,dominant_freq,most_freq]=step2(t_end,phi,alpha,mat1,vec1,p,threshold); %%% obtaining the final matrix and vector after running simulation.
 
-%% Step3: Results for structure to idea %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%% step3a: defining the average intra_idea neighbourhood index %%%%%%%
-neighbor_index=step3a(mat2,vec2);
-
-%%%%%%% step3b: defining the average intra_idea distance %%%%%%%
-intra_idea_distance=step3b(mat2,vec2);
-
-%%%%%%% step3c: frequency of dominant idea with respect to time %%%%%%%
-%%% is the third output of the step2 function (dominant_freq)%%%
-dominant_freq;
-
-%%%%%%% step3d: Fraction of novel ideas (novelity index) %%%%%%
-nov_index=(length(vec2>p))/(length(vec2)); %%% indicates the fraction of agents holding the newly generated ideas 
-
-%%%%%%% step3e: defining the average dominance time (the average amount of time in which the dominating idea keeps it's dominance over differnt dominance periods)
-average_dominance_time=step3e(most_freq);
 
 %% Step4: Results for idea to structure %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -107,3 +91,22 @@ average_path_length = step4d( mat2,s,c );
 
 %%%%%%% step4e: Diameter of the network %%%%%%%%%%%%%%%%%%
 diam=step4e(mat2,s,c);
+
+
+%% Step3: Results for structure to idea %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%% step3a: defining the average intra_idea neighbourhood index %%%%%%%
+neighbor_index=step3a(mat2,vec2);
+
+%%%%%%% step3b: defining the average intra_idea distance %%%%%%%
+intra_idea_distance=step3b(mat2,vec2,s,c);
+
+%%%%%%% step3c: frequency of dominant idea with respect to time %%%%%%%
+%%% is the third output of the step2 function (dominant_freq)%%%
+dominant_freq;
+
+%%%%%%% step3d: Fraction of novel ideas (novelity index) %%%%%%
+nov_index=(length(vec2>p))/(length(vec2)); %%% indicates the fraction of agents holding the newly generated ideas 
+
+%%%%%%% step3e: defining the average dominance time (the average amount of time in which the dominating idea keeps it's dominance over differnt dominance periods)
+average_dominance_time=step3e(most_freq);
