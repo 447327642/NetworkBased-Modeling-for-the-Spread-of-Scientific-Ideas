@@ -17,7 +17,7 @@ for i=1:length(unq)
     nn=zeros(1,s); %%% initializing the vector which will store the number of agents holding the idea unq(i) who belong to the m-th connected component
     mean_sum0=zeros(1,s);%%% initializing the vector which stores the mean of the distances between agents holding the idea unq(i) who belong to each distinct connected component
     for m=1:s %%% for each connected component
-        y=x(c(x)==m); %%% the set of agents holding the idea unq(i) who belong to the m-th connected component
+        y=x(find(c(x)==m)); %%% the set of agents holding the idea unq(i) who belong to the m-th connected component
         nn(m)=length(y); %%% number of agents holding the idea unq(i) who belong to the m-th connected component
         sum0=0;
         if nn(m)>1
