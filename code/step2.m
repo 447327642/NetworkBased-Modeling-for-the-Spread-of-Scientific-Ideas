@@ -22,7 +22,8 @@ for t=1:t_end
     a1=rand();
     b1=phi;
     if a1<b1 %%% i.e with probability phi to reorganize the network
-       v=find(mat(x1,:)==1 && vec~=vec(x1)); %%% defining the neighbours of x1 that do not have the same idea as x1
+       v00=find(mat(x1,:)==1) %%% defining neighbours of x1
+       v=find(vec(v00)~=vec(x1)) %%% define neighbours of x1 that do not have the same idea as x1
        x2=v(ceil(rand()*length(v))); %%% choosing one neighbour randomly to remove connection with
        mat(x1,x2)=0; %%% deletion of the edge between x1 and x2
        mat(x2,x1)=0; %%% deletion of the edge between x2 and x1
