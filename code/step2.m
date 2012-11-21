@@ -22,41 +22,47 @@ for t=1:t_end
     a1=rand();
     b1=phi;
     if a1<b1 %%% i.e with probability phi to reorganize the network
-       v00=find(mat(x1,:)==1) %%% defining neighbours of x1
-       v=find(vec(v00)~=vec(x1)) %%% define neighbours of x1 that do not have the same idea as x1
-       x2=v(ceil(rand()*length(v))); %%% choosing one neighbour randomly to remove connection with
-       mat(x1,x2)=0; %%% deletion of the edge between x1 and x2
-       mat(x2,x1)=0; %%% deletion of the edge between x2 and x1
-       ind=0;
-       while (ind==0)
-           similar_idea=find(vec==vec(x1)); %%% define the agents with the same idea
-           x3=similar_idea(ceil(rand()*length(similar_idea))); %%% choose x3 randomly among the agents with the same idea with x1 as the newly connected agent to x1
-           if mat(x3,x1)~=1  %%% to ensure x3 is not already a neighbour of x1// otherwise it iterates till finding the appropriate one
-               ind=1;
+       v00=find(mat(x1,:)==1); %%% defining neighbours of x1
+       v=find(vec(v00)~=vec(x1)); %%% define neighbours of x1 that do not have the same idea as x1
+       if ~isempty(v)
+           neigh=randperm(length(v)); %%% random permutation of neighbours
+           neigh=neigh(1); %%% first index of the permutation, to choose a neighbour randomly
+           x2=v(neigh); %%% choosing one neighbour randomly to remove connection with
+           mat(x1,x2)=0; %%% deletion of the edge between x1 and x2
+           mat(x2,x1)=0; %%% deletion of the edge between x2 and x1
+           ind=0;
+           while (ind==0)
+               similar_idea=find(vec==vec(x1)); %%% define the agents with the same idea
+               neigh2=randperm(length(similar_idea)); %%% get permutation of these agents
+               neigh2=neigh2(1); %%% get first index, representing random neighbour
+               x3=similar_idea(neigh2); %%% choose x3 randomly among the agents with the same idea with x1 as the newly connected agent to x1
+               if mat(x3,x1)~=1  %%% to ensure x3 is not already a neighbour of x1// otherwise it iterates till finding the appropriate one
+                   ind=1;
+               end
            end
-       end
        mat(x1,x3)=1; %%% formation of new edge between x1 and x3
        mat(x3,x1)=1; %%% formation of new edge between x3 and x1
+       end
     else  %%% otherwise change the idea of x1 to that of one that reaches the threshold
-       v2=find(mat(x1,:)==1); %%% defining the neighbours of x1
-       vv=vec(v2); %%% the corresponding ideas of the neighbours
-       vvv=unique(vv); %%% vector of all the distinct ideas
-       freq=zeros(1,length(vvv)); %%% vector for frequencies of the ideas
-       for i=1:length(vvv) %%% to test for all distinct ideas
-           if length(find(vv==vvv(i)))>(threshold*length(v2)) %%%whether the frequency is larger than the threshold [To include complex contagion definition]
-               freq(i)=1;
-           end
-       end
-       candidates=vvv(freq==1); %%% The ideas meeting the threshold 
-       candidates_size=length(candidates); %%% The number of ideas meeting the threshold
-       if candidates_size>0
-           chosen=ceil(rand()*candidates_size);%%% Randomly choose one of the candidates
-           vec(x1)=candidates(chosen);  %%% change the idea of x1 to the chosen idea 
-       end
-                              
+        v2=find(mat(x1,:)==1); %%% defining the neighbours of x1
+        vv=vec(v2); %%% the corresponding ideas of the neighbours
+        vvv=unique(vv); %%% vector of all the distinct ideas
+        freq=zeros(1,length(vvv)); %%% vector for frequencies of the ideas
+        for i=1:length(vvv) %%% to test for all distinct ideas
+            if length(find(vv==vvv(i)))>(threshold*length(v2)) %%%whether the frequency is larger than the threshold [To include complex contagion definition]
+                freq(i)=1;
+            end
+        end
+        candidates=vvv(freq==1); %%% The ideas meeting the threshold 
+        candidates_size=length(candidates); %%% The number of ideas meeting the threshold
+        if candidates_size>0
+            choice=randperm(candidates_size); %%% generate random permutation of the candidates
+            chosen=choice(1);%%% Randomly choose one of the candidates
+            vec(x1)=candidates(chosen);  %%% change the idea of x1 to the chosen idea 
+        end                      
        %x2=v(ceil(rand()*length(v))); %%% choosing one neighbour randomly to whose idea, the idea of x1 will be changed
        %vec(x1)=vec(x2); %%% change the idea of x1 to that of x2 
-    end
+     end
     
     y=ceil(rand()*n); %%%choosing one person randomly for coming up with a new idea
     a2=rand();
