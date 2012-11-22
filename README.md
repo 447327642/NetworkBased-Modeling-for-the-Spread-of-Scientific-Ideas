@@ -1,7 +1,7 @@
 # MATLAB HS12 – Research Plan
 
 
-> * Group Name: Crazy Scientists Without Opinions
+> * Group Name: Crazy Scientists Without Idea
 > * Group participants' names: 
 Mayra Bermudez,
 Sarah Grimm,
