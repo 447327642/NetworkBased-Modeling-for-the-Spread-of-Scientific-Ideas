@@ -29,18 +29,18 @@ for choice1=1:4
          s1='Caveman';
         case 2
         %%% option 2: Random Connectivity Matrix
-        prob=0.01; %%% probability of edge formation between any pairs of edges
+        prob=0.025; %%% probability of edge formation between any pairs of edges
         mat1=step1_randomgraph(n,prob);
         s1='Random';
         case 3
         %%% option 3: Scale Free Connectivity Matrix
-        m0=100; % number of initially placed nodes
-        m1=50; % number of nodes a new added node is connected to, 1 <= m1 < m0
+        m0=30; % number of initially placed nodes
+        m1=15; % number of nodes a new added node is connected to, 1 <= m1 < m0
         mat1=step1_scalefree(n, m0, m1);
         s1='Scale_free';
         case 4
         %%% option 4: Small world Connectivity Matrix
-        ka=100; %% mean degree (assumed to be an even integer)
+        ka=30; %% mean degree (assumed to be an even integer)
         beta=0.01; %% rewiring probability
         mat1= step1_smallworld(n, ka, beta);
         s1='Small_world';
