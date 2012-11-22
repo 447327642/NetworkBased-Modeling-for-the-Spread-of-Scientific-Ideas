@@ -1,15 +1,15 @@
 %% The first phase: Simulation to study the influence of network structure on the opinion%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% The following parameters will remain constant during this study,
 %%% so we won't play with them %%%
-n=1000; %% the number of agents %%%
-m=100; %% initial number of clusters for caveman matrix%%%
-p=100; %% initial number of opinions%%
+n=1200; %% the number of agents %%%
+m=40; %% initial number of clusters for caveman matrix%%%
+p=40; %% initial number of opinions%%
 t_end=1000; %%% number of iterations%%
-phi=0; %%% network reorganization rate%%
-%%% for alpha and threshold value we'll run different simulations based on
+%%% for the following parameters we'll run different simulations based on
 %%% conmbinatorial complexity of the parameters%%%
+phi_choices=[0,0.1,0.3,0.5]; %%% network reorganization rate%%
 alpha_choices=[0,0.01,0.03,0.05,0.10]; %%% innovation rate %%%
-threshold_choices=[0.01,0.025,0.05,0.1,0.3,0.5];%%% threshold for complex contagion %%%
+threshold_choices=[0.001,0.01,0.02,0.05,0.1];%%% threshold for complex contagion %%%
 
 %%% a totally random idea distribution , independent of the connectivity
 %%% matrix, so applicable for every network structure is defined for this
@@ -47,11 +47,12 @@ for choice1=1:4
     end
  
     %% Step2: Simulation %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    for choice2=1:5
-        alpha=alpha_choices(choice2);
-        
-        for choice3=1:6
-             threshold=threshold_choices(choice3);
+    for choice2=1:4
+        phi=phi_choices(choice2);
+        for choice3=1:5
+            alpha=alpha_choices(choice3);
+           for choice4=1:5
+             threshold=threshold_choices(choice4);
              
              [mat2,vec2,dominant_freq,most_freq]=step2(t_end,phi,alpha,mat1,vec1,p,threshold); %%% obtaining the final matrix and vector after running simulation.
              
@@ -86,7 +87,7 @@ for choice1=1:4
              s3=int2str(choice3);
              name=['phase1_',s1,'_',s2,'_',s3];
              save(name);
-            
+           end          
         end
     end
 end
@@ -98,14 +99,16 @@ clear;
 
 %%% The following three parameters will remain constant during this study,
 %%% so won't play with them %%%
-n=1000; %% the number of agents
-m=100; %% initial number of clusters for caveman matrix
-p=100; %% initial number of opinions
-t_end=1000; %%% number of iterations
-%%% The following parameters should be modified in each different simulation
-phi_choices=[0,0.125,0.25,0.375,0.5]; %%% network reorganization rate
-alpha=0; %%% innovation rate
-threshold_choices=[0.01,0.025,0.05,0.1,0.3,0.5]; %%% threshold for complex contagion
+n=1200; %% the number of agents
+m=40; %% initial number of clusters for caveman matrix
+p=40; %% initial number of opinions
+t_end=1000; %%% number of iterations%%
+%%% for the following parameters we'll run different simulations based on
+%%% conmbinatorial complexity of the parameters%%%
+phi_choices=[0,0.1,0.3,0.5]; %%% network reorganization rate%%
+alpha_choices=[0,0.01,0.03,0.05,0.10]; %%% innovation rate %%%
+threshold_choices=[0.001,0.01,0.02,0.05,0.1];%%% threshold for complex contagion %%%
+
 
 %%%%%in this phase we'll keep connectivity matrix constant, so we only use
 %%%%%Caveman connectivity matrix %%%
@@ -148,11 +151,13 @@ for choice1=1:3
            s3='Antiparallel';
     end
     %% Step2: Simulation %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    for choice2=1:5
+    for choice2=1:4
         phi=phi_choices(choice2);
         
-        for choice3=1:6
-            threshold=threshold_choices(choice3);
+        for choice3=1:5
+            alpha=alpha_choices(choice3);
+          for choice4=1:5 
+            threshold=threshold_choices(choice4);
             
             [mat2,vec2,dominant_freq,most_freq]=step2(t_end,phi,alpha,mat1,vec1,p,threshold); %%% obtaining the final matrix and vector after running simulation.
 
@@ -183,8 +188,12 @@ for choice1=1:3
             s3=int2str(choice3);
             name=['phase2_',s1,'_',s2,'_',s3];
             save(name);
+          end
         end
     end
 end
 
 clear;
+
+
+
