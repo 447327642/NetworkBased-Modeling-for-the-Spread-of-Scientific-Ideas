@@ -85,7 +85,7 @@ for choice1=1:4
              %%% naming the file which saves the results
              s2=int2str(choice2);
              s3=int2str(choice3);
-             name=['phase1_',s1,'_',s2,'_',s3];
+             name=['phase1_',s1,'_',s2,'_',s3,'_',s4];
              save(name);
            end          
         end
@@ -186,7 +186,7 @@ for choice1=1:3
             %%%naming and saving
             s2=int2str(choice2);
             s3=int2str(choice3);
-            name=['phase2_',s1,'_',s2,'_',s3];
+            name=['phase2_',s1,'_',s2,'_',s3,'_',s4];
             save(name);
           end
         end
