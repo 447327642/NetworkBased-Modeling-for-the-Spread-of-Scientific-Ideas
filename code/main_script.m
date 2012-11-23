@@ -1,7 +1,7 @@
 %% The first phase: Simulation to study the influence of network structure on the opinion%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% The following parameters will remain constant during this study,
 %%% so we won't play with them %%%
-n=1200; %% the number of agents %%%
+n=1000; %% the number of agents %%%
 m=40; %% initial number of clusters for caveman matrix%%%
 p=40; %% initial number of opinions%%
 t_end=1000; %%% number of iterations%%
@@ -34,13 +34,13 @@ for choice1=1:4
         s1='Random';
         case 3
         %%% option 3: Scale Free Connectivity Matrix
-        m0=30; % number of initially placed nodes
-        m1=15; % number of nodes a new added node is connected to, 1 <= m1 < m0
+        m0=24; % number of initially placed nodes
+        m1=12; % number of nodes a new added node is connected to, 1 <= m1 < m0
         mat1=step1_scalefree(n, m0, m1);
         s1='Scale_free';
         case 4
         %%% option 4: Small world Connectivity Matrix
-        ka=30; %% mean degree (assumed to be an even integer)
+        ka=24; %% mean degree (assumed to be an even integer)
         beta=0.01; %% rewiring probability
         mat1= step1_smallworld(n, ka, beta);
         s1='Small_world';
