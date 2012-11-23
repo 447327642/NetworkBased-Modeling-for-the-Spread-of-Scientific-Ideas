@@ -10,6 +10,7 @@ for i=1:s %%% for each connected component
     a=length(x); %%% the number of nodes in the i-th connected component
     path_length=zeros(1,(a*(a-1)/2)); %%% The vector storing the shortest path between each pairs of nodes belonging to the connected component i
     count=0;
+    if a>1
     for k=1:(a-1)
         for j=(k+1):a
             count=count+1;
@@ -17,7 +18,11 @@ for i=1:s %%% for each connected component
         end
     end
     max_path(i)=max(path_length); %% the maximum shortest path for connected component i
+    else
+    max_path(i)=0;
+    end
 end
 graph_diameter=max(max_path); %% the maximum shortest path for the hole network (Diameter of the network)
 end
+
 
