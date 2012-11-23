@@ -12,6 +12,7 @@ for i=1:s %%% for each connected component
     a=length(x); %%% the number of nodes in the i-th connected component
     n(i)=a;
     count=0;
+    if a>1
     for k=1:(a-1)
         for j=(k+1):a
         count=count+graphshortestpath(sp,x(k),x(j)); %%% sum of the path length between all pairs of node
@@ -19,6 +20,9 @@ for i=1:s %%% for each connected component
     end
     norml=a*(a-1)/2; %%% normalization factor
     av_p_l(i)=count/norml; %%% average of path length
+    else
+    av_p_l(i)=0;
+    end
 end
 average_path_length=sum(av_p_l.*n)/sum(n); %%% weighted average path length
 end
