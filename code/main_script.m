@@ -7,9 +7,10 @@ p=40; %% initial number of opinions%%
 t_end=1000; %%% number of iterations%%
 %%% for the following parameters we'll run different simulations based on
 %%% conmbinatorial complexity of the parameters%%%
-phi_choices=[0,0.1,0.3,0.5]; %%% network reorganization rate%%
-alpha_choices=[0,0.01,0.03,0.05,0.10]; %%% innovation rate %%%
-threshold_choices=[0.001,0.01,0.02,0.05,0.1];%%% threshold for complex contagion %%%
+phi_choices=[0.1,0.3,0.5]; %%% network reorganization rate%%
+alpha_choices=[0.01,0.05,0.10]; %%% innovation rate %%%
+threshold_choices=[0.001,0.01,0.05];%%% threshold for complex contagion %%%
+
 
 %%% a totally random idea distribution , independent of the connectivity
 %%% matrix, so applicable for every network structure is defined for this
@@ -47,11 +48,11 @@ for choice1=1:4
     end
  
     %% Step2: Simulation %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    for choice2=1:4
+    for choice2=1:3
         phi=phi_choices(choice2);
-        for choice3=1:5
+        for choice3=1:3
             alpha=alpha_choices(choice3);
-           for choice4=1:5
+           for choice4=1:3
              threshold=threshold_choices(choice4);
              
              [mat2,vec2,dominant_freq,most_freq]=step2(t_end,phi,alpha,mat1,vec1,p,threshold); %%% obtaining the final matrix and vector after running simulation.
@@ -106,9 +107,10 @@ p=40; %% initial number of opinions
 t_end=1000; %%% number of iterations%%
 %%% for the following parameters we'll run different simulations based on
 %%% conmbinatorial complexity of the parameters%%%
-phi_choices=[0,0.1,0.3,0.5]; %%% network reorganization rate%%
-alpha_choices=[0,0.01,0.03,0.05,0.10]; %%% innovation rate %%%
-threshold_choices=[0.001,0.01,0.02,0.05,0.1];%%% threshold for complex contagion %%%
+phi_choices=[0.1,0.3,0.5]; %%% network reorganization rate%%
+alpha_choices=[0.01,0.05,0.10]; %%% innovation rate %%%
+threshold_choices=[0.001,0.01,0.05];%%% threshold for complex contagion %%%
+
 
 
 %%%%%in this phase we'll keep connectivity matrix constant, so we only use
@@ -133,7 +135,7 @@ for choice1=1:3
            %%% This idea vector is applicable only for caveman connectivity matrix in
            %%% which every agents inside a cluster have the same idea
            vec1=zeros(1,n);
-           for i=1:m %%% for each cluster
+           for i=1:(m-1) %%% for each cluster
               for j=1:ceil(n/m)
                   vec1((i*ceil(n/m))+j)=i; %%% all agents will hold the i-th idea
               end
@@ -144,7 +146,7 @@ for choice1=1:3
            %%% This idea vector is applicable only for caveman connectivity matrix in
            %%% which every agents inside a cluster have different idea
            vec1=zeros(1,n);
-           for i=1:m %%% for each cluster
+           for i=1:(m-1) %%% for each cluster
                for j=1:ceil(n/m)
                   vec1((i*ceil(n/m))+j)=j; %%% all agents will hold different idea
                end
@@ -152,12 +154,12 @@ for choice1=1:3
            s3='Antiparallel';
     end
     %% Step2: Simulation %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    for choice2=1:4
+    for choice2=1:3
         phi=phi_choices(choice2);
         
-        for choice3=1:5
+        for choice3=1:3
             alpha=alpha_choices(choice3);
-          for choice4=1:5 
+          for choice4=1:3 
             threshold=threshold_choices(choice4);
             
             [mat2,vec2,dominant_freq,most_freq]=step2(t_end,phi,alpha,mat1,vec1,p,threshold); %%% obtaining the final matrix and vector after running simulation.
