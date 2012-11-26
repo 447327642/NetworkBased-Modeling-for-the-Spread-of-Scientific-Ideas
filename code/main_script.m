@@ -140,7 +140,7 @@ for choice1=1:3
                   vec1((i*ceil(n/m))+j)=i; %%% all agents will hold the i-th idea
               end
            end
-           s2='Parallel';
+           s1='Parallel';
            case 3
            %%%%%% option3: Antiparallel idea vector %%%%%%%
            %%% This idea vector is applicable only for caveman connectivity matrix in
@@ -151,7 +151,7 @@ for choice1=1:3
                   vec1((i*ceil(n/m))+j)=j; %%% all agents will hold different idea
                end
            end
-           s3='Antiparallel';
+           s1='Antiparallel';
     end
     %% Step2: Simulation %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     for choice2=1:3
