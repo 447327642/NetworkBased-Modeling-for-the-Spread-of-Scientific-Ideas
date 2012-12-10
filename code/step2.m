@@ -9,7 +9,7 @@ function [mat, vec, dominant_freq, most_freq] = step2(t_end,phi,alpha,mat,vec,p,
 %%% Then it outputs: 
 %%% mat: connectivity matrix after simulation
 %%% vec: idea vector after simulation
-%%% dominant_ferq: the vector holding the frequency of the dominant idea
+%%% dominant_freq: the vector holding the frequency of the dominant idea
 %%% most_freq: the vector holding the index of dominating idea in each time
 
 most_freq=zeros(1,t_end); %%% Vector for storing the index of the dominating idea in each time step.
