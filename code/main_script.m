@@ -5,7 +5,7 @@ n=1000; %% the number of agents %%%
 m=40; %% initial number of clusters for caveman matrix%%%
 p=40; %% initial number of ideas%%
 t_end=1000; %%% number of iterations%%
-%%% for the following parameters we'll run different simulations based on
+%%% For the following parameters we'll run different simulations based on
 %%% combinatorial complexity of the parameters%%%
 phi_choices=[0.1,0.3,0.5]; %%% network reorganization rate (AKA rewiring)%%
 alpha_choices=[0.01,0.05,0.10]; %%% innovation rate %%%
@@ -30,19 +30,19 @@ for choice1=1:4
          s1='Caveman';
         case 2
         %%% option 2: Random Connectivity Matrix
-        prob=0.025; %%% probability of edge formation between any pairs of edges
+        prob=0.025; %%% Probability of edge formation between any pair of edges
         mat1=step1_randomgraph(n,prob);
         s1='Random';
         case 3
         %%% option 3: Scale Free Connectivity Matrix
-        m0=24; % number of initially placed nodes
-        m1=12; % number of nodes a new added node is connected to, 1 <= m1 < m0
+        m0=24; % Number of initially placed nodes
+        m1=12; % Number of nodes a new added node is connected to, 1 <= m1 < m0
         mat1=step1_scalefree(n, m0, m1);
         s1='Scale_free';
         case 4
         %%% option 4: Small World Connectivity Matrix
-        ka=24; %% mean degree (assumed to be an even integer)
-        beta=0.01; %% rewiring probability
+        ka=24; %% Mean degree (assumed to be an even integer)
+        beta=0.01; %% Rewiring probability
         mat1= step1_smallworld(n, ka, beta);
         s1='Small_world';
     end
@@ -55,7 +55,7 @@ for choice1=1:4
            for choice4=1:3
              threshold=threshold_choices(choice4);
              
-             [mat2,vec2,dominant_freq,most_freq]=step2(t_end,phi,alpha,mat1,vec1,p,threshold); %%% obtaining the final matrix and vector after running simulation.
+             [mat2,vec2,dominant_freq,most_freq]=step2(t_end,phi,alpha,mat1,vec1,p,threshold); %%% Obtaining the final matrix and vector after running the simulation
              
              %%%% We need step4c here, since its outputs will be the input
              %%%% for step 3b
@@ -78,7 +78,7 @@ for choice1=1:4
              dominant_freq;
 
              %%%%%%% step3d: Fraction of novel ideas (novelty index) %%%%%%
-             nov_index=(length(find(vec2>p)))/(length(vec2)); %%% indicates the fraction of agents holding the newly generated ideas 
+             nov_index=(length(find(vec2>p)))/(length(vec2)); %%% Indicates the fraction of agents holding the newly generated ideas 
 
              %%%%%%% step3e: Defining the average dominance time (the average amount of time in which the dominating idea keeps its dominance over different dominance periods)
              average_dominance_time=step3e(most_freq);
@@ -100,12 +100,12 @@ clear;
 %% The second phase: Simulation to study the influence of idea distribution on the network structure%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%% The following three parameters will remain constant during this study,
-%%% so won't play with them %%%
+%%% so we won't play with them %%%
 n=1000; %% the number of agents
 m=40; %% initial number of clusters for caveman matrix
 p=40; %% initial number of ideas
 t_end=1000; %%% number of iterations%%
-%%% for the following parameters we'll run different simulations based on
+%%% For the following parameters we'll run different simulations based on
 %%% combinatorial complexity of the parameters%%%
 phi_choices=[0.1,0.3,0.5]; %%% network reorganization rate (AKA rewiring)%%
 alpha_choices=[0.01,0.05,0.10]; %%% innovation rate %%%
@@ -113,8 +113,8 @@ threshold_choices=[0.001,0.01,0.05];%%% threshold for complex contagion %%%
 
 
 
-%%%%%In this phase we'll keep the connectivity matrix constant, so we only use
-%%%%%Caveman connectivity matrix %%%
+%%%%% In this phase we'll keep the connectivity matrix constant, so we only use
+%%%%% Caveman connectivity matrix %%%
 mat1=step1_caveman(n,m);
 
 
@@ -135,9 +135,9 @@ for choice1=1:3
            %%% This idea vector is applicable only for caveman connectivity matrix in
            %%% which all agents inside a cluster have the same idea
            vec1=zeros(1,n);
-           for i=1:(m-1) %%% for each cluster
+           for i=1:(m-1) %%% For each cluster
               for j=1:ceil(n/m)
-                  vec1((i*ceil(n/m))+j)=i; %%% all agents will hold the i-th idea
+                  vec1((i*ceil(n/m))+j)=i; %%% All agents will hold the i-th idea
               end
            end
            s1='Parallel';
@@ -146,9 +146,9 @@ for choice1=1:3
            %%% This idea vector is applicable only for caveman connectivity matrix in
            %%% which all agents inside a cluster have different ideas
            vec1=zeros(1,n);
-           for i=1:(m-1) %%% for each cluster
+           for i=1:(m-1) %%% For each cluster
                for j=1:ceil(n/m)
-                  vec1((i*ceil(n/m))+j)=j; %%% all agents will hold different idea
+                  vec1((i*ceil(n/m))+j)=j; %%% All agents will hold different ideas
                end
            end
            s1='Antiparallel';
@@ -162,7 +162,7 @@ for choice1=1:3
           for choice4=1:3 
             threshold=threshold_choices(choice4);
             
-            [mat2,vec2,dominant_freq,most_freq]=step2(t_end,phi,alpha,mat1,vec1,p,threshold); %%% obtaining the final matrix and vector after running simulation.
+            [mat2,vec2,dominant_freq,most_freq]=step2(t_end,phi,alpha,mat1,vec1,p,threshold); %%% Obtaining the final matrix and vector after running the simulation
 
 
             %% Step3: Results for the influence of the idea distribution on the network structure %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
