@@ -1,0 +1,81 @@
+\documentclass[11pt]{article}
+\usepackage{geometry}                
+\geometry{letterpaper}                   
+
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{epstopdf}
+\usepackage{natbib}
+\usepackage{amssymb, amsmath}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+
+\title{Network-Based Modeling for the Spread of Scientific Ideas}
+\author{Mayra Berm\'udez, Sarah Grimm, Rzgar Hosseini}
+\date{December 14th, 2012} 
+
+\begin{document}
+
+
+\input{cover}
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{Agreement}
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+% IMPORTANT
+% you MUST include the ETH declaration of originality here; it is available for download on the course website or at http://www.ethz.ch/faculty/exams/plagiarism/index_EN; it can be printed as pdf and should be filled out in handwriting
+
+
+%%%%%%%%%% Table of content %%%%%%%%%%%%%%%%%
+
+\tableofcontents
+
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\section{Abstract}
+\input{Abstract}
+\newpage
+
+\section{Individual contributions}
+\input{IndividualContributions}
+\newpage
+
+\section{Introduction and Motivation}
+\input{IntroductionMotivation}
+\newpage
+
+\section{Description of the Model}
+\input{DescriptionofModel}
+\newpage
+
+\section{Implementation}
+\input{Implementation}
+\newpage
+
+\section{Simulation Results and Discussion}
+\input{Results}
+\newpage
+
+\section{Summary and Outlook}
+\input{Summary}
+\newpage
+
+\section{References}
+
+\bibliographystyle{plain}
+\bibliography{Refs}
+
+
+
+
+\end{document}  
