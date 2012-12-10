@@ -1,4 +1,3 @@
-
 To do
 
 (M) Add code section to Report_main and add a file for the section
@@ -12,7 +11,6 @@ To do
 (M) Remove plot1 and plot2 files from main entry
 
 
-(S) Spell-check code
 
 (S) Intro section
 
