@@ -7,6 +7,20 @@
 \usepackage{epstopdf}
 \usepackage{natbib}
 \usepackage{amssymb, amsmath}
+\usepackage{microtype}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\hypersetup{
+%   %% my adds
+	pagebackref=TRUE,
+        pdftitle={Network-Based Modeling for the Spread of Scientific Ideas},%
+        pdfauthor={M. Berm\'udez, S. Grimm, R. Hosseini},%
+        citecolor=blue,%
+        linkcolor=blue,%
+	hidelinks=TRUE,
+	pdfpagemode=UseOutlines,
+}
+
 \DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
 
 \title{Network-Based Modeling for the Spread of Scientific Ideas}
@@ -72,7 +86,7 @@
 
 \section{References}
 
-\bibliographystyle{plain}
+\bibliographystyle{chicago}
 \bibliography{Refs}
 
 
