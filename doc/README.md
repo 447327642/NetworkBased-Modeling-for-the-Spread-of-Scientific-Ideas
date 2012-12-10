@@ -1,5 +1,4 @@
 
-
 To do
 
 (M) Add code section to Report_main and add a file for the section
@@ -21,7 +20,6 @@ To do
 
 (S) Results section
 
-(S) Upload pdf versions of result images
 
 
 (R) Add two additional references to Refs.bib
