@@ -1,5 +1,15 @@
-# Doc Folder
+# To do list, please add to it
 
-Your project report goes here. It is mandatory to use one of the templates (latex or word) that you find herein.
+(M) Add code section to Report_main and add a file for the section
+(M) Implementation section (& add two additional references)
+(M) Printout to sign on Wednesday/Thursday
+(M) Basic presentation slides
+(M) Remove plot1 and plot2 files from main entry
 
-Save the final report as report.pdf
+(S) Spell-check code
+(S) Intro section
+(S) Description of model section
+(S) Results section
+(S) Upload pdf versions of result images
+
+(R) Add two additional references to Refs.bib
