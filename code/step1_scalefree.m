@@ -1,5 +1,5 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%% code adopted from %%%
+%%% Code adopted from %%%
 %%% Modeling and Simulating Social Systems with MATLAB %%%
 %%% http://www.soms.ethz.ch/teaching/MatlabFall2012 %%%
 %%% Authors: Stefan Brugger and Cristoph Schwirzer, 2011 %%%
@@ -55,7 +55,7 @@ for i = m0+1:n
     nEdges = nEdges+m;
 end
 
-% finally construct a symmetric adjacency matrix using the vector of edges
+% Finally construct a symmetric adjacency matrix using the vector of edges
 edges = edges(1:2*nEdges);
 first = edges(1:2:end);
 second = edges(2:2:end);
