@@ -21,3 +21,5 @@ To do
 
 
 (R) Add two additional references to Refs.bib
+
+Update Proposal
