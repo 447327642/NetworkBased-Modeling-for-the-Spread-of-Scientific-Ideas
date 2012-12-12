@@ -15,17 +15,32 @@ We introduced a node threshold $\delta$ to the general model in order to investi
 
 \subsection{Networks}
 
+<<<<<<< HEAD
 For the purposes of our simulations, we used four network structures. \textbf{*****NETWORK STRUCTURE FIGURE****} illustrates them. These structures can be characterized by properties such as average shortest path lengths, clustering coefficients, and the degree of connectivity (see \textbf{******TABLE DEFINITIONS OF TERMS****} for definitions). Below are short descriptions of each network structure. In order to compare between different structures, the network structure parameters were chosen such that the mean degree of the networks were similar (approximately 30). For further details about parameter values, see \textbf{*******TABLE WITH PARAMETERS ****}.
 
 \subsubsection{Random Graph}
 
 A variant of the Erd\H{o}s-R\'enyi random graph model \citep*{ER1960}, and implemented by \citet*{BS2011}.
 Random graphs have a short average path length. The graph is defined by the total number of nodes, and by the probability of any two nodes to be connected. Thus all connections are random. They typically have a small clustering coefficient.
+=======
+For the purposes of our simulations, we used four network structures. These structures can be characterized by properties such as average shortest path lengths, clustering coefficients, and the degree of connectivity. For a brief definition of these properties (which will be used in the results section), please see Table \ref{Tab2}. Below are short descriptions of each network structure.
+
+\input{Table2}
+
+\subsubsection{Random Graph}
+
+The second variant of the Erd\H{o}s-R\'enyi random graph model \citep{ER1960} as mentioned in \citet{Wiki}, and implemented by \citet*{BS2011}.
+Random graphs have a short average path length. The graph is defined by the total number of nodes, and by the probability of any two nodes to be connected. They typically have a small clustering coefficient.
+>>>>>>> I put here the matlab codes in this folder to be able to put them in the report, later I'll figure it out how remove them
 
 \subsubsection{Caveman Graph}
 
 As defined by \citet*{W2003}.
+<<<<<<< HEAD
 The caveman structure is defined as having \emph{k} isolated and fully connected `cliques' from which one link is changed to connect one clique to another, rendering all cliques to be connected. Thus, relative to random graphs, they have a high clustering coefficient and a large average shortest path length.
+=======
+The caveman structure is defined as having $k$ isolated and fully connected `cliques' where one link is changed to connect one clique to another, rendering all cliques to be connected. Thus, relative to random graphs, they have a high clustering coefficient and a large average shortest path length.
+>>>>>>> I put here the matlab codes in this folder to be able to put them in the report, later I'll figure it out how remove them
 
 \subsubsection{Small World Graph}
 
@@ -36,6 +51,12 @@ Small world graphs have characteristics that lie in between random graphs and hi
 
 Defined by \citet*{BA1999}, and implemented by \citet*{BS2011}.
 Scale-free network structures are often found where new nodes are constantly being added, and they are connected to already well-connected nodes. Such a structure displays a scale-free power-law distribution of the degree (connectivity) of nodes. Thus, there are few nodes that are highly connected, and more nodes that are moderately or mildly connected. Compared to random graphs, they have a smaller average shortest path.
+<<<<<<< HEAD
+=======
+In order to compare between different graph structures, the parameters were chosen such that the mean degree of the graphs were similar (approximately 30). For further details about parameter values, see Table \ref{Tab1}.
+
+\input{Table1}
+>>>>>>> I put here the matlab codes in this folder to be able to put them in the report, later I'll figure it out how remove them
 
 \subsection{Ideas}
 
