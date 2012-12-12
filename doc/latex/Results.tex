@@ -3,51 +3,37 @@
 
 \subsection{Effects of Network Structure on Idea Distribution}
 
-For this analysis, four network structures were implemented (caveman, small world, random, and scale-free) with a random idea distribution. Simulations were run for each network structure for 27 different parameter combinations (three values for each of $\phi$, $\delta$ and $\alpha$). The effects of each network structure on the idea distribution was evaluated on five features: the neighbourhood index, the intra-idea distance, the frequency of dominance of an idea, the average dominance time for an idea, and the novelty index. We also investigated how these effects vary with the three parameters ($\phi$, $\delta$, $\alpha$).
+For this analysis, ideas were assigned randomly onto the nodes of four different network structures (caveman, small world, random, and scale-free). Simulations were run for each network structure for 27 different parameter combinations (three values for each of $\phi$, $\delta$ and $\alpha$). The effects of each network structure on the idea distribution was evaluated on five features: the intra-idea distance, the neighbourhood index, the frequency of dominance of an idea, the average dominance time for an idea, and the novelty index. We also investigated how these effects vary with the three parameters ($\phi$, $\delta$, $\alpha$).
 
-\subsubsection{Neighbourhood Index and Intra-Idea Distance}
+\subsubsection{Intra-Idea Distance and Neighbourhood Index}
 
 For any parameter combination, the caveman and small world structures resulted in larger intra-idea distances (respectively) than those of the random and scale-free structures, which were very similar to each other (***FIGURE 1.1****). Additionally, a similar influence was found on the neighbourhood index: the caveman structure held the largest index regardless of parameter combination, followed by the small world, random, and scale-free structures (****FIGURE 1.2****). It seems that the caveman structure encourages nodes to be within the direct neighbourhood of like-minded nodes (nodes with the same idea) and at a farther distance from like-minded nodes that are not in their direct neighbourhood, whereas the random and scale-free structures have a tendency to keep like-minded nodes in each other's direct neighbourhood but to also keep those like-minded nodes not in their direct neighbourhood at a shorter distance.
 
+\paragraph{Dependence on $\alpha$}
+For all network structures, increasing the level of innovation $\alpha$ decreased the intra-idea distance. This effect was more pronounced in the random and scale-free networks (***FIGURE 1.5-1.8****). Does innovation bring people together in scienitific communities? Perhaps it does the opposite: nodes with novel ideas could not influence other nodes to adopt their idea since they were the only nodes to hold the novel idea. Thus, when given the opportunity to rewire, neighbouring nodes broke their links wiht this node and thus became closer with like-minded nodes. Nodes with novel ideas were therefore isolated, and this could be the reason that the intra-idea distance seemingly decreased.
+
+Higher values of $\alpha$ also increased the neighbourhood index for all network structures. This correlation was again most visible for the scale-free network, followed by the random network (***FIGURE 1.9-1.12***). One possible explanation for this correlation is that the more novel ideas nodes create, the less likely it is that the contagion threshold is met for other ideas, and thus nodes will only be rewiring instead of also changing their ideas. Thus more like-minded nodes will be connected, and the index increases. 
+
+
+\paragraph{Dependence on $\phi$}
+By increasing $\phi$, the intra-idea distance decreased for all network structures. This correlation is quite an intuitive result since $\phi$ is the probability of deleting a connection between two nodes with different ideas and the formation of a new connection between two nodes with the same idea, and thus, by increasing $\phi$ the distance between like-minded nodes decreases. Unlike the $\alpha$ parameter, the effects of $\phi$ are more pronounced for the caveman and small world structures rather than for the random and scale-free networks (*****FIGURES 1.13-1.16****).
+
+On the other hand, th effects of $\phi$ on the neighborhood index varied between networks. Increasing $\phi$ increased the neighbourhood indexes of the random and scale-free networks, while it decreased the neighbourhood index of the caveman network and had no correlation with changes in the small world network (***FIGURES 1.17-1.20***).
+
+\paragraph{Dependence on $\delta$}
+Increasing values of the complex contagion threshold $\delta$ decreased the intra-idea distance for all network structures (****FIGURE 1.21-1.24***). Using the $\delta$ value of 0.05 resulted in slightly lower intra-idea distances than the two smaller values (which behaved very similarly) for the caveman and small world network structures. WHY?
+
+The neighbourhood index for the caveman network increased as $\delta$ increased (****FIGURE 1.25***). This is intuitive since requiring more like-minded nodes to be in the direct neighbourhood for a node to adopt their idea automatically increases the number of like-minded nodes in the neighbourhood (neighbourhood index). However, increasing $\delta$ could have had the opposite effect: if the threshold was too high, nodes would not have adopted their neighbhours' ideas and thus the neighbourhood index would have remained small. No correlation was found between the neighbourhood index of the small world, scale-free, and random network structures and values of $\delta$. WHY only for caveman?
+
 \subsubsection{Frequency of Dominance}
+
+This feature is interesting if one considers scientific society. How dominant are dominant ideas in the scientific community? Does the structure of this community influence this dominance? For all parameter combinations and for all network structures in our simulations, the frequency of dominance of ideas increased with time. This may suggest that none of these structures impede the adoption of new ideas, and that, not surprisingly, society tends to adopt dominant ideas. More surprisingly, however, the increase in dominance frequency progressed more quickly for the caveman network structure (***FIGURE 1.3***). Could it be that this structure encourages nodes to adopt dominant ideas more easily? This may not be generalizable because the results are quite sensitive to parameter values due to the stochasticity of the simulations. For example, ****FIGURE 1.4*** shows a different combination of parameters, and here the faster increase in the dominance is not observed for the caveman structure.
+
 
 \subsubsection{Average Dominance Time and Novelty Index}
 
 
-Because the results of the average dominance time and the novelty index were too dependent on the parameter values, we did not include their results. It is not surprising th
-
-In general,   
-four structures, random idea distribution, three $\phi$ three $\delta$ and three $\alpha$ --> 27 combinations for each structure. five features
-
-neighbourhood index
-	larger for caveman and small world
-	smaller for random and scale-free
-intra-idea distance
-	larger for caveman and small world
-	random and scale-free are the same and lower
-dominant frequency
-	for all structures and for all parameter combinations the frequency increased --> adoption of dominant idea.
-	more rapid increase for caveman. but could be stochastic and dependent on parameter combination
-average dominance time
-	too dependent on parameter values
-	not dependent on alpha.
-novelty index
-	too dependent on parameter values
-	dependent on alpha obviously.
-
-alpha
-	for all structures: increasing it will decrease the intra-idea distance. !!! Could be because of more single unique ideas that have no 'distance'. more visible effect for random network and scale-free
-	for all structures: increasing it decreased neighbourhood index. more visible effect for random and scale-free.
-phi
-	for all structures: increasing it will decrease the intra-idea distance. more visible effect for caveman and small world.
-	for neighbourhood index: in random and scale-free increasing phi increased it, and in caveman increasing phi decreased it, and for small world no effect on index.
-delta
-	for all structures: increasing it decreased intra-idea distance. look at plot: certain spikes - combinations
-	for neigbourhood index: in caveman increasing delta increases index. for other structures no connection between delta and index. obvious why it would, but not clear why only for caveman
-
-caveman and small world keep nodes with same idea close, but those wiht same idea that are not in direct neighbourhood are far (as compared with random and scale-free).
-
-
+Because the results of the average dominance time and the novelty index were too dependent on the parameter values, we did not include their results. The network structure does not seem to play a strong enough role over all parameter combinations in influencing these features. It is not surprising, however, that the novelty index was highly dependent on the value of $\alpha$, but it is not so intuitive why the average dominance time was not correlated with $\alpha$ at all: increasing the number of novel ideas decreases the possible number of 'followers' for already-established ideas. Perhaps the value of $\alpha$ would need to be increased to observe this behaviour.
 
 
 
@@ -55,17 +41,30 @@ caveman and small world keep nodes with same idea close, but those wiht same ide
 
 three idea distributions on caveman network, three $\phi$ three $\delta$ and three $\alpha$ --> 27 combinations. examining five features of structure
 
-clustering coefficient
+
+
+\subsubsection{Clustering Coefficient}
+\paragraph{Dependence on Parameters}
+
+
 	higher for parallel
-degree distribution
+\subsubsection{Degree Distribution}
 	for parallel ended up similar to scale-free graph distribution
 	for random and antiparallel the distribution was similar to that of a random graph
-connected components
+\paragraph{Dependence on Parameters}
+
+\subsubsection{Connected Components}
 	all the same: 1. always all reachable
-average path length
+\paragraph{Dependence on Parameters}
+
+\subsubsection{Average Path Length}
 	larger for parallel
-diameter
+\paragraph{Dependence on Parameters}
+
+\subsubsection{Network Diameter}
 	larger for parallel
+\paragraph{Dependence on Parameters}
+
 
 
 alpha
@@ -77,3 +76,16 @@ delta
 
 Parallel is different to random and antiparallel: 
 - diameter, average shortest path and clustering coefficient are HIGHER than other two distributions'.
+
+
+
+
+
+Discussion
+
+network structure affects the ditirbution of ideas --> distribution of scientific idea depends on structure of scientific community
+delta effect with caveman on index
+
+
+Future Study
+intra-idea distance = dont' include ideas that are held by only one node.
