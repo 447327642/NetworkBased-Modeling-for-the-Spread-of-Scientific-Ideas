@@ -20,7 +20,7 @@ if ind==0 %%% In the case that during the simulation just one special idea remai
     temp(ind)=count; 
 end
 
-%%% From ind-th element until the end the temp vector will remain zero we define a new vector as follows to store the corresponding non-zero elements of temp 
+%%% The values from ind-th element until the last element of the 'temp' vector will be zero , so we define a new vector to store thenon-zero elements of 'temp' 
 final=zeros(1,ind);
 for j=1:ind
     final(j)=temp(j);
