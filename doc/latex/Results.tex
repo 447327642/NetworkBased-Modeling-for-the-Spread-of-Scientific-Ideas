@@ -5,12 +5,14 @@
 
 For this analysis, ideas were assigned randomly onto the nodes of four different network structures (caveman, small world, random, and scale-free). Simulations were run for each network structure for 27 different parameter combinations (three values for each of $\phi$, $\delta$ and $\alpha$). The effects of each network structure on the idea distribution was evaluated on five features: the intra-idea distance, the neighbourhood index, the frequency of dominance of an idea, the average dominance time for an idea, and the novelty index. We also investigated how these effects vary with the three parameters ($\phi$, $\delta$, $\alpha$).
 
+We observed that the caveman and small world network structures had a similar influence on the intra-idea distance and neighbourhood index, and the random and scale-free network structures had a different - yet similar to each other - influence on these features.
+
 \subsubsection{Intra-Idea Distance and Neighbourhood Index}
 
-For any parameter combination, the caveman and small world structures resulted in larger intra-idea distances (respectively) than those of the random and scale-free structures, which were very similar to each other (***FIGURE 1.1****). Additionally, a similar influence was found on the neighbourhood index: the caveman structure held the largest index regardless of parameter combination, followed by the small world, random, and scale-free structures (****FIGURE 1.2****). It seems that the caveman structure encourages nodes to be within the direct neighbourhood of like-minded nodes (nodes with the same idea) and at a farther distance from like-minded nodes that are not in their direct neighbourhood, whereas the random and scale-free structures have a tendency to keep like-minded nodes in each other's direct neighbourhood but to also keep those like-minded nodes not in their direct neighbourhood at a shorter distance.
+For any parameter combination, the caveman and small world structures resulted in larger intra-idea distances (respectively) than those of the random and scale-free structures, which were very similar to each other (***FIGURE 1.1****). Additionally, a similar influence was found on the neighbourhood index: the caveman structure held the largest index regardless of parameter combination, followed by the small world, random, and scale-free structures (****FIGURE 1.2****). It seems that the caveman structure encourages nodes to be within the direct neighbourhood of like-minded nodes (nodes with the same idea) and at a farther distance from like-minded nodes that are not in their direct neighbourhood, whereas the random and scale-free structures have a tendency to keep like-minded nodes in each other's direct neighbourhood but to also keep those like-minded nodes not in their direct neighbourhood at a shorter distance. This could be a result of the general larger average path distance that caveman networks have when compared to random and scale-free networks.
 
 \paragraph{Dependence on $\alpha$}
-For all network structures, increasing the level of innovation $\alpha$ decreased the intra-idea distance. This effect was more pronounced in the random and scale-free networks (***FIGURE 1.5-1.8****). Does innovation bring people together in scienitific communities? Perhaps it does the opposite: nodes with novel ideas could not influence other nodes to adopt their idea since they were the only nodes to hold the novel idea. Thus, when given the opportunity to rewire, neighbouring nodes broke their links wiht this node and thus became closer with like-minded nodes. Nodes with novel ideas were therefore isolated, and this could be the reason that the intra-idea distance seemingly decreased.
+For all network structures, increasing the level of innovation $\alpha$ decreased the intra-idea distance. This effect was more pronounced in the scale-free and random networks (***FIGURE 1.5-1.8****). Does innovation bring people together in scienitific communities? Perhaps it does not: under complex contagion, nodes that adopted a novel idea could not influence other nodes since they were the sole holders of these ideas. Therefore, their intra-idea distance for these `novel nodes' would have been zero. 
 
 Higher values of $\alpha$ also increased the neighbourhood index for all network structures. This correlation was again most visible for the scale-free network, followed by the random network (***FIGURE 1.9-1.12***). One possible explanation for this correlation is that the more novel ideas nodes create, the less likely it is that the contagion threshold is met for other ideas, and thus nodes will only be rewiring instead of also changing their ideas. Thus more like-minded nodes will be connected, and the index increases. 
 
@@ -39,52 +41,47 @@ Because the results of the average dominance time and the novelty index were too
 
 \subsection{Effects of Idea Distribution on Network Structure}
 
-three idea distributions on caveman network, three $\phi$ three $\delta$ and three $\alpha$ --> 27 combinations. examining five features of structure
 
+Here we investigated the opposite direction of effects: how changing the idea distribution affects the resulting network structure. To do this we applied three different idea distributions (random, parallel, and antiparallel to the structure) to a caveman network. There were again 27 different parameter combinations for each idea distribution, as in the previous analysis. The five features of the network structure that we evaluated were: the clustering coefficient, the degree distribution of the nodes, the number of connected components, the average path length, and the network diameter. 
+
+We observed that the influence of applying a parallel idea distribution on the features of the network structure was quite different to the influence of the random and antiparallel idea distributions. While the networks always remained fully connected (**FIGURE 2.4****), the remaining features changed. The parameter $\alpha$ did not change these effects for any of the idea distributions (see ***FIGURES 2.6-2.14***). Given these simulation results, perhaps a caveman-structured scientific community would also manage certain levels of innovativity without changing its fundamental structure.
 
 
 \subsubsection{Clustering Coefficient}
-\paragraph{Dependence on Parameters}
 
+The clustering coefficient of resulting networks varied with the type of idea distribution. When nodes in the same cave shared the same idea (parallel distribution), the clustering coefficient was larger (***FIGURE 2.3***). Additionally, the clustering coefficients for both the random and the anti-parallel idea distributions decreased in a similar manner regardless of the parameter combinations. Both of these results are intuitive since less rewiring would have taken place for the parallel distribution case, and the high clustering coefficient of the caveman structure would have been conserved, whereas more rewiring would have ocurred for the two other distributions, thus decreasing the clustering coefficients.
 
-	higher for parallel
-\subsubsection{Degree Distribution}
-	for parallel ended up similar to scale-free graph distribution
-	for random and antiparallel the distribution was similar to that of a random graph
 \paragraph{Dependence on Parameters}
-
-\subsubsection{Connected Components}
-	all the same: 1. always all reachable
-\paragraph{Dependence on Parameters}
+Increasing values of the rewiring parameter $\phi$ decreased the clustering coefficient for all starting distributions, especially for the random and antiparallel distributions (***FIGURES 2.21-2.23***). This again is intuitive since $\phi$ increases the chances of changing connections in a highly clustered network.
+Increasing values of $\delta$, however, only increased the clustering coefficient when using a parallel idea distribution, and only slightly (***FIGURES 2.30-2.32***). WHY?
 
 \subsubsection{Average Path Length}
-	larger for parallel
+The average path length of resulting networks was larger when a parallel idea distribution was used (***FIGURE 2.1****). This is not surprising, since the structure of the caveman network was more conserved (because most nodes were already connected to like-minded nodes and did not need to rewire), and its average path length is larger than that of more randomized networks, such as the ones resulting from a larger amount of rewiring. 
 \paragraph{Dependence on Parameters}
+Increasing $\phi$, regardless of the idea distribution, decreased the average path length. This effect was more prononced for the random and anti-parallel idea distribution cases (**FIGURE 2.15-2.17***). This is another intuitive result since more rewiring naturally disturbs the rigid structure of a caveman network, thereby decreasing its large average path length; rewiring also occurs less frequently in the parallel idea distribution case because most nodes are already connected to like-minded nodes.
+Changing values of $\delta$ (which requires more than one neighbouring node to have the same idea in order to influence the chosen node) did not change the effects of idea distributions on the average path length (***FIGURES 2.24-2.26***). This is natural, since nodes were either already connected to a significant number of nodes with the same idea (in the case of the parallel distribution), not connected to any other node with the same idea (the antiparallel case), or connected to nodes with random assignment of ideas. Thus the threshold $\delta$ would either already be fulfilled from the start, would definitely not be fulfilled, or would have a very small chance of being fulfilled, respectively.
+
 
 \subsubsection{Network Diameter}
-	larger for parallel
+Similar to the clustering coefficient and the average path length, the network diameter was larger when the parallel idea distribution was applied (***FIGURE 2.2*****). This distribution encouraged the structure of the caveman network to remain mostly unchanged, and thus the farthest distance between two nodes was larger than for the case of random or anti-parallel distributions, where more rewiring occured. 
 \paragraph{Dependence on Parameters}
+As $\phi$ increased, the network diameter decreased for all idea distributions, and slightly less for the parallel distribution (**FIGURES 2.18-2.20*****). Rewiring a caveman network intuitively may decrease the network diameter by connecting more of its caves.
+Similar to the average path length, values of $\delta$ did not change the behaviour of the network diameter given the idea distributions (***FIGURES 2.27-2.29***).
 
 
-
-alpha
-	no effect
-phi
-	same effect for all distributions: increasing it will decrease path length, diameter, clustering coefficient. less effect for parallel
-delta
-	for parallel only: increasing it increased the clustering coefficient.
-
-Parallel is different to random and antiparallel: 
-- diameter, average shortest path and clustering coefficient are HIGHER than other two distributions'.
+\subsubsection{Degree Distribution}
+Random graphs have a somewhat normally distributed degree distribution. Scale-free graphs, on the other hand, have a degree distribution that follows a scale-free power-law. We observed that the degree distribution of the networks depended on the idea distribution (***FIGURE 2.5****). A parallel idea distribution resulted in a degree distribution similar to that of a scale-free graph, which is not surprising. Caveman graphs have two or three different degrees for their nodes, and allowing for some rewiring would 'smooth' out this discrete distribution. Similar to previous results, the random and antiparallel idea distributions behaved similarly: their degree distribution was similar to that of random graphs. It is interesting to see such a visible difference in these distributions over relatively few time steps (1000 steps), regardless of the parameter combinations. 
 
 
+\subsection{Discussion}
 
 
-
-Discussion
-
+Expected results vs actual results.
 network structure affects the ditirbution of ideas --> distribution of scientific idea depends on structure of scientific community
 delta effect with caveman on index
+random and antiparallel more dependent on delta
+distribution changed a lot, but the others didn'ttoo much.
+
 
 
 Future Study
