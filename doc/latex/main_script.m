@@ -1,4 +1,4 @@
-%% The first phase: Simulation to study the influence of network structure on the opinion%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% The first phase: Simulation to study the influence of network structure on the opinion%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% The following parameters will remain constant during this study,
 %%% so we won't play with them %%%
 n=1000; %% the number of agents %%%
@@ -21,7 +21,7 @@ for i=1:n
 end 
     
 for choice1=1:4
-%% Step1: Definition of Different initial matrices %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Step1: Definition of Different initial matrices %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     %%%%%%%%%%%%%%%%%%%% For each simulation, we must choose one of the following connectivity matrices %%%%%%%%%%%%%%%%%%%%%%%
     switch choice1
         case 1 
@@ -47,7 +47,7 @@ for choice1=1:4
         s1='Small_world';
     end
  
-    %% Step2: Simulation %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    %% Step2: Simulation %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     for choice2=1:3
         phi=phi_choices(choice2);
         for choice3=1:3
@@ -65,7 +65,7 @@ for choice1=1:4
              %%% s: number of connected components
              %%% c: vector which assigns each node to a connected component
 
-             %% Step3: Results for structure to idea %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+             %% Step3: Results for structure to idea %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
              %%%%%%% step3a: defining the average intra_idea neighbourhood index %%%%%%%
              neighbor_index=step3a(mat2,vec2);
@@ -96,8 +96,8 @@ end
 
 clear;
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% The second phase: Simulation to study the influence of opinion on the network structure%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% The second phase: Simulation to study the influence of opinion on the network structure%%%%%%%%%%%%%%%%
 
 %%% The following three parameters will remain constant during this study,
 %%% so won't play with them %%%
@@ -153,7 +153,7 @@ for choice1=1:3
            end
            s1='Antiparallel';
     end
-    %% Step2: Simulation %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    %% Step2: Simulation %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     for choice2=1:3
         phi=phi_choices(choice2);
         
@@ -165,7 +165,7 @@ for choice1=1:3
             [mat2,vec2,dominant_freq,most_freq]=step2(t_end,phi,alpha,mat1,vec1,p,threshold); %%% obtaining the final matrix and vector after running simulation.
 
 
-            %% Step3: Results for idea to structure %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+            %% Step3: Results for idea to structure %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
             %%%%%%% step4a: clustering coefficient of the final network %%%%%%%%
             clust_coefficient=step4a(mat2);

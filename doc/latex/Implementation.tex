@@ -16,7 +16,7 @@ For the second phase we just generate the adjacency matrix for the caveman struc
 
 This step is the same for both phases.
 
-Rewiring simulation is implemented in the file \textbf{step2.m} and done by function \textbf{step2} which requires the next parameters:
+The updating process is implemented in the file \textbf{step2.m} and done by function \textbf{step2} which requires the next parameters:
 \begin{itemize}
 
 \item \verb+t_end+: number of iterations
@@ -46,14 +46,14 @@ Rewiring simulation is implemented in the file \textbf{step2.m} and done by func
     %\Ensure $y = x^n$
     %\State $y \Leftarrow 1$
     \For {each of the iterations}
-    	\State choose a person $x1$ in the network at random
+    	\State choose a node $x1$ in the network at random
 	\State generate a random number $a1$
     \If{$a1 < phi$} \Comment{ With probability $phi$ we reorganize the network}
         \State {eliminate the connection between $x1$ and one of his neighbors with different idea}
-        \State select another person at random among the persons with the same idea than $x1$ and that are not already neighbors of $x1$ and create a connection between them
+        \State select another node at random among the nodes with the same idea than $x1$ and that are not already neighbors of $x1$ and create a connection between them
     \Else { change the idea of $x1$ to one of the ideas of his neighbors which meet the threshold} 
             \EndIf
-    \State choose a person $y$ in the random to come up with a nobel idea
+    \State choose a node $y$ in the random to come up with a nobel idea
     \State generate a random number $a2$
     \If {$a2<\alpha$} $y$ comes up with a new idea \Comment {With probability $alpha $ $ y$ comes up with a new idea}
      \EndIf
