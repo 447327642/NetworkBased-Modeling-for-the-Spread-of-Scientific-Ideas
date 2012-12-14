@@ -1,26 +1,34 @@
 \BOOKMARK [1][-]{section.1}{Abstract}{}% 1
-\BOOKMARK [1][-]{section.2}{Introduction and Motivation}{}% 2
-\BOOKMARK [2][-]{subsection.2.1}{Fundamental Questions}{section.2}% 3
-\BOOKMARK [3][-]{subsubsection.2.1.1}{Effects of Network Structure on Idea Distribution}{subsection.2.1}% 4
-\BOOKMARK [3][-]{subsubsection.2.1.2}{Effects of Idea Distribution on Network Structure}{subsection.2.1}% 5
-\BOOKMARK [1][-]{section.3}{Description of the Model}{}% 6
-\BOOKMARK [2][-]{subsection.3.1}{Networks}{section.3}% 7
-\BOOKMARK [3][-]{subsubsection.3.1.1}{Random Graph}{subsection.3.1}% 8
-\BOOKMARK [3][-]{subsubsection.3.1.2}{Caveman Graph}{subsection.3.1}% 9
-\BOOKMARK [3][-]{subsubsection.3.1.3}{Small World Graph}{subsection.3.1}% 10
-\BOOKMARK [3][-]{subsubsection.3.1.4}{Scale-Free Graph}{subsection.3.1}% 11
-\BOOKMARK [2][-]{subsection.3.2}{Ideas}{section.3}% 12
-\BOOKMARK [1][-]{section.4}{Implementation}{}% 13
-\BOOKMARK [2][-]{subsection.4.1}{Step 1: Generating structure networks}{section.4}% 14
-\BOOKMARK [2][-]{subsection.4.2}{Step 2: Rewiring}{section.4}% 15
-\BOOKMARK [2][-]{subsection.4.3}{Step 3: Getting results}{section.4}% 16
-\BOOKMARK [1][-]{section.5}{Simulation Results and Discussion}{}% 17
-\BOOKMARK [2][-]{subsection.5.1}{Phase 1:}{section.5}% 18
-\BOOKMARK [2][-]{subsection.5.2}{Phase 2}{section.5}% 19
-\BOOKMARK [1][-]{section.6}{Summary and Outlook}{}% 20
-\BOOKMARK [1][-]{section.7}{References}{}% 21
-\BOOKMARK [1][-]{appendix.A}{MATLAB code}{}% 22
-\BOOKMARK [2][-]{subsection.A.1}{Main script}{appendix.A}% 23
-\BOOKMARK [2][-]{subsection.A.2}{Step 1: generation of structure networks}{appendix.A}% 24
-\BOOKMARK [2][-]{subsection.A.3}{Step 2: Rewiring process}{appendix.A}% 25
-\BOOKMARK [2][-]{subsection.A.4}{Step 3: Results}{appendix.A}% 26
+\BOOKMARK [1][-]{section.2}{Individual contributions}{}% 2
+\BOOKMARK [1][-]{section.3}{Introduction and Motivation}{}% 3
+\BOOKMARK [2][-]{subsection.3.1}{Fundamental Questions}{section.3}% 4
+\BOOKMARK [3][-]{subsubsection.3.1.1}{Effects of Network Structure on Idea Distribution}{subsection.3.1}% 5
+\BOOKMARK [3][-]{subsubsection.3.1.2}{Effects of Idea Distribution on Network Structure}{subsection.3.1}% 6
+\BOOKMARK [1][-]{section.4}{Description of the Model}{}% 7
+\BOOKMARK [2][-]{subsection.4.1}{Networks}{section.4}% 8
+\BOOKMARK [3][-]{subsubsection.4.1.1}{Random Graph}{subsection.4.1}% 9
+\BOOKMARK [3][-]{subsubsection.4.1.2}{Caveman Graph}{subsection.4.1}% 10
+\BOOKMARK [3][-]{subsubsection.4.1.3}{Small World Graph}{subsection.4.1}% 11
+\BOOKMARK [3][-]{subsubsection.4.1.4}{Scale-Free Graph}{subsection.4.1}% 12
+\BOOKMARK [2][-]{subsection.4.2}{Ideas}{section.4}% 13
+\BOOKMARK [1][-]{section.5}{Implementation}{}% 14
+\BOOKMARK [2][-]{subsection.5.1}{Step 1: Generating structure networks and initial idea distribution}{section.5}% 15
+\BOOKMARK [2][-]{subsection.5.2}{Step 2: update}{section.5}% 16
+\BOOKMARK [2][-]{subsection.5.3}{Step 3: Getting results}{section.5}% 17
+\BOOKMARK [1][-]{section.6}{Simulation Results and Discussion}{}% 18
+\BOOKMARK [2][-]{subsection.6.1}{Effects of Network Structure on Idea Distribution}{section.6}% 19
+\BOOKMARK [3][-]{subsubsection.6.1.1}{Intra-Idea Distance and Neighbourhood Index}{subsection.6.1}% 20
+\BOOKMARK [3][-]{subsubsection.6.1.2}{Frequency of Dominance}{subsection.6.1}% 21
+\BOOKMARK [2][-]{subsection.6.2}{Effects of Idea Distribution on Network Structure}{section.6}% 22
+\BOOKMARK [3][-]{subsubsection.6.2.1}{Clustering Coefficient}{subsection.6.2}% 23
+\BOOKMARK [3][-]{subsubsection.6.2.2}{Average Path Length}{subsection.6.2}% 24
+\BOOKMARK [3][-]{subsubsection.6.2.3}{Network Diameter}{subsection.6.2}% 25
+\BOOKMARK [3][-]{subsubsection.6.2.4}{Degree Distribution}{subsection.6.2}% 26
+\BOOKMARK [2][-]{subsection.6.3}{Discussion}{section.6}% 27
+\BOOKMARK [1][-]{section.7}{Summary and Outlook}{}% 28
+\BOOKMARK [1][-]{appendix.A}{MATLAB code}{}% 29
+\BOOKMARK [2][-]{subsection.A.1}{Main script}{appendix.A}% 30
+\BOOKMARK [2][-]{subsection.A.2}{Step 1: generation of structure networks}{appendix.A}% 31
+\BOOKMARK [2][-]{subsection.A.3}{Step 2: Rewiring process}{appendix.A}% 32
+\BOOKMARK [2][-]{subsection.A.4}{Step 3: Results}{appendix.A}% 33
+\BOOKMARK [2][-]{subsection.A.5}{Plotes code}{appendix.A}% 34
