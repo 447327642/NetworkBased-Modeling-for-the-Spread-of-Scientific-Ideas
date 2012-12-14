@@ -1,0 +1,54 @@
+\begin{thebibliography}{}
+
+\bibitem[\protect\citeauthoryear{Barab{\'a}si and Albert}{Barab{\'a}si and
+  Albert}{1999}]{BA1999}
+Barab{\'a}si, A. and R.~Albert (1999).
+\newblock Emergence of scaling in random networks.
+\newblock {\em science\/}~{\em 286\/}(5439), 509--512.
+
+\bibitem[\protect\citeauthoryear{Brugger and Schwirzer}{Brugger and
+  Schwirzer}{2011}]{BS2011}
+Brugger, S. and C.~Schwirzer (2011).
+\newblock Opinion formation by "employed agents" in social networks.
+\newblock Project work done in the course Lecture with Computer Exercises:
+  Modelling and Simulating Social Systems with MATLAB, May 2011.
+
+\bibitem[\protect\citeauthoryear{Centola and Macy}{Centola and
+  Macy}{2007}]{CM2007}
+Centola, D. and M.~Macy (2007).
+\newblock Complex contagions and the weakness of long ties.
+\newblock {\em American Journal of Sociology\/}~{\em 113\/}(3), 702--734.
+
+\bibitem[\protect\citeauthoryear{Erd{\H{o}}s and R{\'e}nyi}{Erd{\H{o}}s and
+  R{\'e}nyi}{1960}]{ER1960}
+Erd{\H{o}}s, P. and A.~R{\'e}nyi (1960).
+\newblock On the evolution of random graphs.
+\newblock {\em Magyar Tud. Akad. Mat. Kutat{\'o} Int. K{\"o}zl\/}~{\em 5},
+  17--61.
+
+\bibitem[\protect\citeauthoryear{Holme and Newman}{Holme and
+  Newman}{2006}]{HN2006}
+Holme, P. and M.~Newman (2006).
+\newblock Nonequilibrium phase transition in the coevolution of networks and
+  opinions.
+\newblock {\em Physical Review E\/}~{\em 74\/}(5), 056108.
+
+\bibitem[\protect\citeauthoryear{Watts}{Watts}{2003}]{W2003}
+Watts, D. (2003).
+\newblock {\em Small worlds: the dynamics of networks between order and
+  randomness}.
+\newblock Princeton university press.
+
+\bibitem[\protect\citeauthoryear{Watts and Strogatz}{Watts and
+  Strogatz}{1998}]{WS1998}
+Watts, D.~J. and S.~H. Strogatz (1998, June).
+\newblock Collective dynamics of {'}small-world{'} networks.
+\newblock {\em Nature\/}~{\em 393\/}(6684), 440--442.
+
+\bibitem[\protect\citeauthoryear{Wikipedia}{Wikipedia}{2011}]{Wiki}
+Wikipedia (2011).
+\newblock Erd{\H{o}}s-r{\'e}nyi model -- wikipedia, the free encyclopedia.
+\newblock
+  \url{http://en.wikipedia.org/wiki/Erd\%C5\%91s\%E2\%80\%93R\%C3\%A9nyi_model}.
+
+\end{thebibliography}
