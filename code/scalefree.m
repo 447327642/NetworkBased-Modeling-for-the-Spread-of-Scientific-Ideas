@@ -1,5 +1,5 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%% code adopted from                                     %%%
+%%% Code adopted from                                     %%%
 %%% Modeling and Simulating Social Systems with MATLAB    %%%
 %%% http://www.soms.ethz.ch/teaching/MatlabFall2012       %%%
 %%% Authors: Stefan Brugger and Cristoph Schwirzer, 2011  %%%

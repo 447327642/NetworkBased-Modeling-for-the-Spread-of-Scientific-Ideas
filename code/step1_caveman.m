@@ -2,8 +2,8 @@ function cave_mat = step1_caveman(n,m)
 %%%%%%%%%%%%  This function outputs a Caveman Matrix  %%%%%%%%%%%%%%%%%%
 %%% n: the number of agents
 %%% m: initial number of clusters
-%%% p: initial maximum index of opinions
-cave_mat=zeros(n,n); %Caveman Matrix
+%%% p: initial maximum index of ideas
+cave_mat=zeros(n,n); % Caveman Matrix
 
 for i=1:n
     x=ceil(i/(n/m));
@@ -11,7 +11,7 @@ for i=1:n
         y=ceil(j/(n/m));
         if x==y
             if i~=j
-            cave_mat(i,j)=1; %definition of intracluster edges
+            cave_mat(i,j)=1; % Definition of intracluster edges
             end
         end
     end
@@ -30,7 +30,7 @@ for i=1:m
         end
     end
 end
-%%% definition of intercluster edges 
+%%% Definition of intercluster edges 
 for i=1:(m-1)
     cave_mat(x2(i),x1(i+1))=1;
     cave_mat(x1(i+1),x2(i))=1;

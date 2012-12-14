@@ -1,10 +1,10 @@
 	
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%% code adopted from %%%
-%%% Modeling and Simulating Social Systems with MATLAB %%%
-%%% http://www.soms.ethz.ch/teaching/MatlabFall2012 %%%
-%%% Authors: Stefan Brugger and Cristoph Schwirzer, 2011 %%%
+%%% Code adopted from					  %%%
+%%% Modeling and Simulating Social Systems with MATLAB 	  %%%
+%%% http://www.soms.ethz.ch/teaching/MatlabFall2012 	  %%%
+%%% Authors: Stefan Brugger and Cristoph Schwirzer, 2011  %%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 function  final= step1_randomgraph(n, p)

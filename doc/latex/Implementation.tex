@@ -1,0 +1,94 @@
+Our simulation comprises mainly two parts, the phase 1 corresponding to the study  of the effect of network structure on to the opinion distribution and phase 2 where we study how the distribution of the ideas affect the topology of the network. These two phases are implemented in the same MATLAB file \textbf{mainscript.m}. Implementation of both phases is divided in three steps. 
+\\
+
+\noindent \textbf{Step 1:} Structure network is chosen and we generate the adjacency matrix corresponding to that structure. Also is generated the initial idea distribution.\\
+\textbf{Step 2:} The updating processes is done using the chosen structure network.\\
+\textbf{Step 3:} At this step a series of functions are called to getting the results.
+
+\subsection{Step 1: Generating structure networks and initial idea distribution}
+
+For the first phase one of the functions \textbf{step1\_scalefree}, \textbf{step1\_caveman},\\ \textbf{step1\_smallworld} and \textbf{step1\_randomgraph} is called, depending in our choice. Each function is found in the MATLAB files \textbf{step1\_scalefree.m, step1\_caveman.m, step1\_randomgraph.m} and \textbf{step1\_smallworld.m} correspondingly.  Each of these functions generates de adjacency matrix corresponding to the chosen network structure. Also in this step the initial idea distribution is done, in the first phase we have a random initial distribution. 
+\\
+For the second phase we just generate the adjacency matrix for the caveman structure network, and then we chose among three different initial idea distributions: random, parallel or nonparallel. After choosing one of them the initial idea distribution vector is generated.
+
+
+\subsection{Step 2: update}
+
+This step is the same for both phases.
+
+Rewiring simulation is implemented in the file \textbf{step2.m} and done by function \textbf{step2} which requires the next parameters:
+\begin{itemize}
+
+\item \verb+t_end+: number of iterations
+ \item \verb+phi+:  network reorganization rate
+ \item \verb+alpha+: innovation rate
+\item \verb+mat+: initial connectivity matrix
+\item  \verb+vec+: initial idea vector
+\item \verb+p+: initial number of opinions
+ \end{itemize}
+ 
+ And has as outputs:
+ \begin{itemize}
+ \item \verb+mat+: connectivity matrix after simulation
+\item \verb+vec+: idea vector after simulation
+\item \verb+dominant_freq+: the vector holding the frequency of dominant idea
+ \item \verb+most_freq+: the vector holding the index of dominating idea in each time
+\end{itemize}
+
+\bigskip
+\noindent The function \textbf{step2} in which the updating is executed follows the next algorithm:
+
+\begin{algorithm}                      % enter the algorithm environment
+\caption{Update process}          % give the algorithm a caption
+\label{alg1}                           % and a label for \ref{} commands later in the document
+\begin{algorithmic}                    % enter the algorithmic environment
+   % \Require $n \geq 0 \vee x \neq 0$
+    %\Ensure $y = x^n$
+    %\State $y \Leftarrow 1$
+    \For {each of the iterations}
+    	\State choose a person $x1$ in the network at random
+	\State generate a random number $a1$
+    \If{$a1 < phi$} \Comment{ With probability $phi$ we reorganize the network}
+        \State {eliminate the connection between $x1$ and one of his neighbors with different idea}
+        \State select another person at random among the persons with the same idea than $x1$ and that are not already neighbors of $x1$ and create a connection between them
+    \Else { change the idea of $x1$ to one of the ideas of his neighbors which meet the threshold} 
+            \EndIf
+    \State choose a person $y$ in the random to come up with a nobel idea
+    \State generate a random number $a2$
+    \If {$a2<\alpha$} $y$ comes up with a new idea \Comment {With probability $alpha $ $ y$ comes up with a new idea}
+     \EndIf
+   \EndFor
+\end{algorithmic}
+\end{algorithm}
+
+\subsection{Step 3: Getting results}
+
+In the phase 1 we want to observe the influence of a certain network structure  on the distribution of ideas after the up dating process (step 2). For this is necessary to search for parameters that reflects the final distribution of ideas. In this study we observe the following parameters:
+
+\begin{itemize}
+\item \verb+n_index+ which is the average neighbor index of the network
+\item \verb+intra_idea_distance+ which is the average of the average shortest distance between agents holding the same idea
+\item \verb+average_dominance_time+ which is the average of the dominance time for different dominance periods
+\end{itemize}
+
+\noindent All this parameters are obtained in \textbf{step3a.m, step3b.m } and \textbf{step 3d.m} which are called in \textbf{main\_script.m}.
+\\
+
+\noindent In phase 2 we want to find out how the distribution of ideas change the network structure, for this reason we just look at a fixed structure network, that would be the caveman structure. After step 2 we want to see how the initial structure was modified by the rewiring process, in order to see this  we look for the next parameters
+
+\begin{itemize}
+\item \verb+clust_coeff+: the clustering coefficient of the network
+\item  \verb+[dgr,frq]+: degree vector and its corresponding frequency vector 
+\item \verb+average_path_length+: the average path length for the graph
+\item \verb+graph_diameter+: outputs the diameter of the graph 
+
+\end{itemize}
+
+
+
+
+
+
+
+
+      

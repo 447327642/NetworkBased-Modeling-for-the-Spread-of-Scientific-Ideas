@@ -1,0 +1,113 @@
+\documentclass[11pt]{article}
+\usepackage{geometry}                
+\geometry{letterpaper}                   
+
+\usepackage{graphicx}
+\usepackage{algpseudocode}
+\usepackage{algorithm}
+\usepackage{amssymb}
+\usepackage{epstopdf}
+\usepackage{natbib}
+\usepackage{amssymb, amsmath}
+<<<<<<< HEAD
+\usepackage{microtype}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\hypersetup{
+%   %% my adds
+	pagebackref=TRUE,
+        pdftitle={Network-Based Modeling for the Spread of Scientific Ideas},%
+        pdfauthor={M. Berm\'udez, S. Grimm, R. Hosseini},%
+        citecolor=blue,%
+        linkcolor=blue,%
+	hidelinks=TRUE,
+	pdfpagemode=UseOutlines,
+}
+
+=======
+\usepackage[framed,numbered,autolinebreaks,useliterate]{mcode}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=false,       % false: boxed links; true: colored links
+    linkcolor=red,          % color of internal links (change box color with linkbordercolor)
+    }
+>>>>>>> I put here the matlab codes in this folder to be able to put them in the report, later I'll figure it out how remove them
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+
+\title{Network-Based Modeling for the Spread of Scientific Ideas}
+\author{Mayra Berm\'udez, Sarah Grimm, Rzgar Hosseini}
+\date{December 14th, 2012} 
+
+\begin{document}
+
+
+\input{cover}
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{Agreement}
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+% IMPORTANT
+% you MUST include the ETH declaration of originality here; it is available for download on the course website or at http://www.ethz.ch/faculty/exams/plagiarism/index_EN; it can be printed as pdf and should be filled out in handwriting
+
+
+%%%%%%%%%% Table of content %%%%%%%%%%%%%%%%%
+
+\tableofcontents
+
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\section{Abstract}
+\input{Abstract}
+\newpage
+
+%\section{Individual contributions}
+%\input{IndividualContributions}
+\newpage
+
+\section{Introduction and Motivation}
+\input{IntroductionMotivation}
+\newpage
+
+\section{Description of the Model}
+\input{DescriptionofModel}
+\newpage
+
+\section{Implementation}
+\input{Implementation}
+\newpage
+
+\section{Simulation Results and Discussion}
+\input{Results}
+\newpage
+
+\section{Summary and Outlook}
+\input{Summary}
+\newpage
+
+%\section{References}
+
+<<<<<<< HEAD
+\bibliographystyle{chicago}
+=======
+\appendix
+\input{Code}
+
+
+\bibliographystyle{plain}
+>>>>>>> I put here the matlab codes in this folder to be able to put them in the report, later I'll figure it out how remove them
+\bibliography{Refs}
+
+
+
+\end{document}  
