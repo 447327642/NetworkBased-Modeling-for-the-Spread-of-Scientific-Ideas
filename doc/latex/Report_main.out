@@ -12,8 +12,8 @@
 \BOOKMARK [3][-]{subsubsection.4.1.4}{Scale-Free Graph}{subsection.4.1}% 12
 \BOOKMARK [2][-]{subsection.4.2}{Ideas}{section.4}% 13
 \BOOKMARK [1][-]{section.5}{Implementation}{}% 14
-\BOOKMARK [2][-]{subsection.5.1}{Step 1: Generating structure networks and initial idea distribution}{section.5}% 15
-\BOOKMARK [2][-]{subsection.5.2}{Step 2: update}{section.5}% 16
+\BOOKMARK [2][-]{subsection.5.1}{Step 1: Generating network structures and initial idea distribution}{section.5}% 15
+\BOOKMARK [2][-]{subsection.5.2}{Step 2: Update}{section.5}% 16
 \BOOKMARK [2][-]{subsection.5.3}{Step 3: Getting results}{section.5}% 17
 \BOOKMARK [1][-]{section.6}{Simulation Results and Discussion}{}% 18
 \BOOKMARK [2][-]{subsection.6.1}{Effects of Network Structure on Idea Distribution}{section.6}% 19
