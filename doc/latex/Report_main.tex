@@ -3,8 +3,10 @@
 \geometry{letterpaper}                   
 
 \usepackage{graphicx}
+\usepackage{float}
 \usepackage{algpseudocode}
 \usepackage{algorithm}
+\usepackage{afterpage}
 \usepackage{amssymb}
 \usepackage{epstopdf}
 \usepackage[framed,numbered,autolinebreaks,useliterate]{mcode}
@@ -35,6 +37,8 @@
 
 
 \input{cover}
+
+
 \newpage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -45,11 +49,16 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\input{Dec}
+
+
+\input{Dec1}
+
+\afterpage{\clearpage}
+
+
 %\clearpage
 
 %\newpage
-
 
 % IMPORTANT
 % you MUST include the ETH declaration of originality here; it is available for download on the course website or at http://www.ethz.ch/faculty/exams/plagiarism/index_EN; it can be printed as pdf and should be filled out in handwriting
@@ -58,7 +67,6 @@
 %%%%%%%%%% Table of content %%%%%%%%%%%%%%%%%
 \newpage
 \tableofcontents
-
 \newpage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -93,18 +101,16 @@
 \input{Summary}
 \newpage
 
-\section{References}
 
-\bibliographystyle{chicago}
+\bibliographystyle{plain}
+
+\bibliography{Refs}
+\newpage
 
 \appendix
 \input{Code}
 
 
-\bibliographystyle{plain}
-
-\newpage
-\bibliography{Refs}
 
 
 

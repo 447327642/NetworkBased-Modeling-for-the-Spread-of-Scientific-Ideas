@@ -55,7 +55,9 @@ for choice1=1:4
            for choice4=1:3
              threshold=threshold_choices(choice4);
              
-             [mat2,vec2,dominant_freq,most_freq]=step2(t_end,phi,alpha,mat1,vec1,p,threshold); %%% obtaining the final matrix and vector after running simulation.
+             [mat2,vec2,dominant_freq,most_freq]=
+             step2(t_end,phi,alpha,mat1,vec1,p,threshold); 
+             %%% obtaining the final matrix and vector after running simulation.
              
              %%%% We need step4c here, since it's outputs will be the input
              %%%% for step 3b
@@ -162,7 +164,9 @@ for choice1=1:3
           for choice4=1:3 
             threshold=threshold_choices(choice4);
             
-            [mat2,vec2,dominant_freq,most_freq]=step2(t_end,phi,alpha,mat1,vec1,p,threshold); %%% obtaining the final matrix and vector after running simulation.
+            [mat2,vec2,dominant_freq,most_freq]=
+            step2(t_end,phi,alpha,mat1,vec1,p,threshold); 
+            %%% obtaining the final matrix and vector after running simulation.
 
 
             %% Step3: Results for idea to structure %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

@@ -35,10 +35,9 @@
 \contentsline {paragraph}{Rewiring criteria}{40}{section*.9}
 \contentsline {paragraph}{Complex contagion and innovation}{40}{section*.10}
 \contentsline {paragraph}{Random idea adoption}{41}{section*.11}
-\contentsline {section}{\numberline {8}References}{42}{section.8}
-\contentsline {section}{\numberline {A}MATLAB code}{42}{appendix.A}
-\contentsline {subsection}{\numberline {A.1}Main script}{42}{subsection.A.1}
-\contentsline {subsection}{\numberline {A.2}Step 1: generation of structure networks}{47}{subsection.A.2}
-\contentsline {subsection}{\numberline {A.3}Step 2: Rewiring process}{58}{subsection.A.3}
-\contentsline {subsection}{\numberline {A.4}Step 3: Results}{60}{subsection.A.4}
-\contentsline {subsection}{\numberline {A.5}Plote codes}{67}{subsection.A.5}
+\contentsline {section}{\numberline {A}MATLAB code}{43}{appendix.A}
+\contentsline {subsection}{\numberline {A.1}Main script}{43}{subsection.A.1}
+\contentsline {subsection}{\numberline {A.2}Step 1: generation of structure networks}{48}{subsection.A.2}
+\contentsline {subsection}{\numberline {A.3}Step 2: Rewiring process}{59}{subsection.A.3}
+\contentsline {subsection}{\numberline {A.4}Step 3: Results}{61}{subsection.A.4}
+\contentsline {subsection}{\numberline {A.5}Plote codes}{68}{subsection.A.5}
