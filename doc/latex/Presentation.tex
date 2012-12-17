@@ -1,20 +1,206 @@
-%Results and Discussion
+\documentclass{beamer}
+\usetheme{Singapore} % My favorite!
+\setbeamercovered{invisible}
+% To remove the navigation symbols from 
+% the bottom of slides%
+\setbeamertemplate{navigation symbols}{} 
+%
+\usepackage{tikz}
+\usepackage{pgf}
+\usepackage{xxcolor}
+\usetikzlibrary{arrows,shadows,petri}
+%                              wg. tokens
+\usepackage{verbatim}
+\usepackage{graphicx}
+%\usepackage{bm}         % For typesetting bold math (not \mathbold)
+%\logo{\includegraphics[height=0.6cm]{yourlogo.eps}}
+%
+\title[Short title of the talk]{Network Based Modeling for the Spread of Scientific Ideas }
+\author{Mayra Berm\'udez, Sara Grimm \& Rzgar Hosseini}
+\institute[U of X]
+{ ETH Zurich \\
+\medskip
+%{\emph{email@domain.ca}}
+}
+\date{\today}
+% \today will show current date. 
+% Alternatively, you can specify a date.
+%
+\begin{document}
+%
+\begin{frame}
+\titlepage
+\end{frame}
+%
+\begin{frame}
 
+\begin{figure}
+[htp]
+\begin{center}
+\includegraphics{science_network_150}
+\end{center}
+\label {fig1}
+\end{figure}
+\end{frame}
+%
+\begin{frame}
+\frametitle{Introduction and Motivations}
+\begin{itemize}
+\item But how do ideas spread? \pause
+\item Research has shown that not only does the nature of information or innovation influence the diffusion of it, but also that the structure of a network influences the diffusion dynamics. \pause
+\item Here, we try to simulate the spread of scientific ideas in different networks. \pause
+\item The model presented is based on two studies: one that investigated critical parameter values for complex contagion and another that investigated critical values of a rewiring parameter.
+\end{itemize}
+\end{frame}
+%
 
-For the first section of the results, ideas were assigned randomly onto the nodes of four different network structures (caveman, small world, random, and scale-free). Chapter 4 describes the network structures and idea distributions that are discussed. Simulations were run for each network structure for 27 different parameter combinations (three values for each of $\phi$, $\delta$ and $\alpha$). The effects of each network structure on the idea distribution was evaluated on five features: the average dominance time of dominant (i.e., most frequent) ideas, the novelty index, the intra-idea distance, the neighbourhood index, and the frequency of dominance of an idea (see Table \ref{Tab2}). We also investigated how these effects varied with the three parameters ($\phi$, $\delta$, $\alpha$).
+\begin{frame}
+%\subsection
+{Fundamental Questions}
+The main goals of this simulation study are to investigate how network structure influences the distribution of ideas, and how the distribution of ideas influences network structure.
+\input{Table2}
+By varying three parameters - probability of rewiring, rate of innovation, and complex contagion threshold ($\phi$, $\alpha$, and $\delta$ respectively) - and using different network structures and idea distributions, we observed how network structure characteristics changed. Similarly, we observed how the distribution of ideas and the connections between them changed
+\end{frame}
+%	
+\begin{frame}
+%\subsubsection
+{Effects of Network Structure on Idea Distribution}
+Given a starting network and a random idea distribution, how do different network structures (see Section \ref{4.1}) affect the distance between nodes that have the same idea (intra-idea distance)? How do they affect the neighbourhood index? How do they change the emergence of dominant ideas and their time of dominance? How do their effects depend on the values of $\phi$, $\alpha$ and $\delta$?
+\end{frame}
+%
+\begin{frame}
+More rigid network structures (those with less `randomness', such as the caveman and the small world networks) may make it more difficult for `like-minded' nodes (that is, nodes with the same idea) to connect and may thus have smaller neighbourhood indexes and larger intra-idea distances than the more random network structures (such as the random and scale-free networks). Their effects may be more sensitive to the values of $\phi$ (because this affects how likely it is for their structure to change) and to values of $\delta$ because being restricted to a more closed group of nodes makes it difficult to reach a threshold necessary to become similar to surrounding nodes. Values of $\alpha$ may decrease the neighbourhood indexes by creating larger diversity among neighbouring nodes.
+\end{frame}
+%
+\begin{frame}
+If more rigid network structures do make it more difficult for like-minded nodes to connect, then it would be more difficult for a dominant idea to emerge in these networks. These effects may be smaller for larger values of $\phi$ since these values would allow for the structure to change more. For larger values of $\phi$ therefore one could expect that the effects of the network structures on the characteristics of the idea distribution are more similar since allowing to change the structure removes their initial influence.
+\end{frame}
+%
+\begin{frame}
+%\subsubsection
+{Effects of Idea Distribution on Network Structure}
+Given a starting idea distribution and a caveman network structure, how do different idea distributions affect the average path length and diameter of the network? Do they change the number of connected components in the network? Do clusters form differently, and how does the clustering coefficient change? What does the distribution of node degree looks like? How do these effects depend on the values of $\phi$, $\alpha$, and $\delta$?
+-random\\
+-paralell\\
+-nonparalell\\
+\end{frame}
+%
+\begin{frame}
+\frametitle{Description of the Model}
 
-The second section of the results investigated the opposite direction of effects: how changing the idea distribution affected the resulting network structure. To do this we applied three different idea distributions (random, parallel, and anti-parallel to the structure) to a caveman network (see Table \ref{Tab2}) with 40 caves. There were again 27 different parameter combinations for each idea distribution, as in the previous analysis. The five features of the network structure that we evaluated were: the clustering coefficient, the degree distribution of the nodes, the number of connected components, the average path length, and the network diameter. 
+The model used here is based on a study by %\citet*{HN2006}. 
+  Each simulation begins with a specified network structure as well as a distribution of the `idea' (or state) of the nodes. At each time step a node either changes its idea to that of one of its neighbours' ideas if its frequency surpasses a defined threshold, rewires to connect with a node that has the same idea, or generates a novel idea (this is the innovation parameter). 
+\end{frame}
+%
+\begin{frame}
+Given the network structure and node states, three parameters are introduced: $\phi$ (probability of rewiring), $\alpha$ (probability of innovation), and $\delta$ (complex contagion threshold). As in \alert{citet*{HN2006}}, $\phi$ is a value from zero to one, and is the probability that one of the edges of a randomly chosen node \emph{i} will be changed to connect to another node \emph{j} that \emph{i} is unconnected with. We decided to add one more criterion to this definition: node \emph{j} is a node that has the same idea as node \emph{i}. This encourages the simulations to reflect a common tendency of individuals to seek out others who think like them. If there is no such node \emph{j}, then the chosen node will do nothing.
+At each time step a node may `come up with a new idea' with a probability of $\alpha$. This value is small to reflect that novel ideas are not frequently observed.
+\end{frame}
+%
+\begin{frame}
+
+We introduced a node threshold $\delta$ to the general model in order to investigate the behaviour of complex contagion as opposed to simple contagion. This was motivated by a study by \citet*{CM2007}. Simple contagion is well suited for modeling the spread of diseases since they may often be passed on by a single contact with an infected individual. However, as our intuition may suggest, other kinds of innovations raise questions about the legitimacy and credibility of the innovations themselves, and may thus require exposure to multiple sources of the innovation. This is called complex contagion. Models usually represent it in two ways regarding the number of connected sources that must have adopted an innovation in order to influence the agent (or individual) in question: it is either a fixed number (greater than one) or a fraction (between zero and one, inclusive). Our simulation used the second formulation since the degree of individual nodes varied across network structures.
+\end{frame}
+%
+\begin{frame}
+%\subsection
+{Networks}
+
+For the purposes of our simulations, we used four network structures. These structures can be characterized by properties such as average shortest path lengths, clustering coefficients, and the degree of connectivity (see Table \ref{Tab2} for definitions). Below are short descriptions of each network structure. In order to compare between different structures, the network structure parameters were chosen such that the mean degree of the networks were similar (approximately 25). For further details about parameter values, see Table \ref{Tab1}\\
+free scale\\
+caveman\\
+random\\
+smallworld\\
+%\subsection
+{Ideas}
+\end{frame}
+%
+\begin{frame}
+\frametitle{Implementation}
+Our simulation comprises mainly two parts: the phase 1 corresponding to the study  of the effect of network structure on the idea distribution, and phase 2 where we study how the distribution of the ideas affect the topology of the network. These two phases are implemented in the same MATLAB file \textbf{mainscript.m}. Implementation of both phases is divided into three steps. 
+\\
+
+\noindent \textbf{Step 1:} Network structure is chosen and we generate the adjacency matrix corresponding to that structure. The initial idea distribution is also generated.\\
+\textbf{Step 2:} The updating process is done onto the chosen network structure.\\
+\textbf{Step 3:} At this step a series of functions are called to get the results.
+\end{frame}
+%
+\begin{frame}
+%\subsection
+{Step 1: Generating network structures and initial idea distribution}\\
+%\subsection
+{Step 2: Update}\\
+\begin{algorithm}                      % enter the algorithm environment
+\caption{Update process}          % give the algorithm a caption
+\label{alg1}                           % and a label for \ref{} commands later in the document
+\begin{algorithmic}                    % enter the algorithmic environment
+   % \Require $n \geq 0 \vee x \neq 0$
+    %\Ensure $y = x^n$
+    %\State $y \Leftarrow 1$
+    \For {each of the iterations}
+    	\State choose a node $x1$ in the network at random
+	\State generate a random number $a1$
+    \If{$a1 < phi$} \Comment{ With probability $phi$ we reorganize the network}
+        \State {eliminate the connection between $x1$ and one of its neighbours with a different idea}
+        \State select another node at random among the nodes with the same idea as $x1$ and that are not already neighbours of $x1$ and create a connection between them
+    \Else { change the idea of $x1$ to one of the ideas of its neighbours which meet the threshold} 
+            \EndIf
+    \State choose a node $y$ in the random to come up with a novel idea
+    \State generate a random number $a2$
+    \If {$a2<\alpha$} $y$ comes up with a new idea \Comment {With probability $alpha $ $ y$ comes up with a new idea}
+     \EndIf
+   \EndFor
+\end{algorithmic}
+\end{algorithm}
+\end{frame}
+%
+\begin{frame}
+%\subsection
+{Step 3: Getting results}
+
+In the phase 1 we want to observe the influence of a certain network structure  on the distribution of ideas after the updating process (step 2). For this, it is necessary to search for features that reflect the final distribution of ideas. In this study we observed the following features:
+
+\begin{itemize}
+\item \verb+n_index+: the average neighbor index of the network
+\item \verb+intra_idea_distance+: the average of the average shortest distance between agents holding the same idea
+\item \verb+average_dominance_time+: the average of the dominance time for different dominance periods
+\end{itemize}
+
+\noindent All these parameters are obtained in \textbf{step3a.m, step3b.m} and \textbf{step3d.m} which are called in \textbf{main\_script.m}.
+\\
+
+\noindent In phase 2 we want to find out how the distribution of ideas changes the network structure. For this reason we look at a fixed network structure: the caveman structure. After step 2 we want to see how the initial structure was modified by the updating process, and in order to do this we observed the following features:
+
+\begin{itemize}
+\item \verb+clust_coeff+: the clustering coefficient of the network
+\item  \verb+[dgr,frq]+: degree vector and its corresponding frequency vector 
+\item \verb+average_path_length+: the average path length for the graph
+\item \verb+graph_diameter+: outputs the diameter of the graph 
+
+\end{itemize}
+
+\end{frame}
+%
+\begin{frame}
+\frametitle{Simulation Results and Discussion}
+For the first section of the results, ideas were assigned randomly onto the nodes of four different network structures .\\
+The effects of each network structure on the idea distribution was evaluated on five features: the average dominance time of dominant (i.e., most frequent) ideas, the novelty index, the intra-idea distance, the neighbourhood index, and the frequency of dominance of an idea (see Table \ref{Tab2}). We also investigated how these effects varied with the three parameters ($\phi$, $\delta$, $\alpha$).\\
+he second section of the results investigated the opposite direction of effects: how changing the idea distribution affected the resulting network structure. To do this we applied three different idea distributions (random, parallel, and anti-parallel to the structure) to a caveman network (see Table \ref{Tab2}) with 40 caves. There were again 27 different parameter combinations for each idea distribution, as in the previous analysis. The five features of the network structure that we evaluated were: the clustering coefficient, the degree distribution of the nodes, the number of connected components, the average path length, and the network diameter. 
 
 We found that there were different behaviours for some features of the idea distribution depending on the network structure, and that there were different behaviours for the structure features depending on the idea distribution. Both of these results were at least partly influenced by the values of $\phi$, $\delta$, and $\alpha$.
-
-\subsection{Effects of Network Structure on Idea Distribution}
-
+\end{frame}
+%
+\begin{frame}
+%\subsection
+{Effects of Network Structure on Idea Distribution}
 The results of the average dominance time and the novelty index were too dependent on the parameter values and were not included; the network structure does not seem to play a strong enough role over all parameter combinations in influencing these two features. It is not surprising, however, that the novelty index was highly dependent on the value of $\alpha$, but it is not so intuitive why the average dominance time was not correlated with $\alpha$ at all: increasing the number of novel ideas decreases the possible number of `followers' for already-established ideas, which should affect the frequency of dominance and therefore the dominance time. Perhaps the value of $\alpha$ would need to be increased to observe this behaviour.
 
 Furthermore, we observed two different results for the intra-idea distance and the neighbourhood index: those from the caveman and small world structures, and those from the random and scale-free structures. All three parameter values affected these results. 
-
-
-\subsubsection{Intra-Idea Distance and Neighbourhood Index}
+\end{frame}
+%
+\begin{frame}
+%\subsubsection
+{Intra-Idea Distance and Neighbourhood Index}
 
 For any parameter combination, the caveman and small world structures resulted in larger intra-idea distances (respectively) than those of the random and scale-free structures, which were very similar to each other (Figure \ref{fig1}). Interestingly, a similar influence was found on the neighbourhood index: the caveman structure held the largest index regardless of parameter combination, followed by the small world, random, and scale-free structures (Figure \ref{fig1}). It seems that the caveman structure encourages nodes to be within the direct neighbourhood of like-minded nodes (nodes with the same idea) and at a farther distance from like-minded nodes that are not in their direct neighbourhood, whereas the random and scale-free structures have a tendency to keep like-minded nodes in each other's direct neighbourhood but to also keep those like-minded nodes not in their direct neighbourhood at a shorter distance. The difference in intra-idea distance between network structures could be a result of the general smaller average path distance that random and scale-free networks have as compared to the caveman and small world graphs.
 
@@ -27,7 +213,9 @@ For any parameter combination, the caveman and small world structures resulted i
 \label {fig1}
 \end{figure}
 
-
+\end{frame}
+%
+\begin{frame}
 \paragraph{Dependence on $\alpha$}
 For all network structures, increasing the level of innovation $\alpha$ decreased the intra-idea distance. This effect was more pronounced in the scale-free and random networks (Figure \ref{fig3}). Does innovation bring people together in scientific communities? Perhaps, and perhaps not. It is possible that these results are due to the construction of our model: because the mechanism of influence involves complex contagion, new ideas would not be able to spread (since they are held only by the originator) and therefore these ideas would technically have an intra-idea distance of zero.
 
@@ -50,7 +238,9 @@ Higher values of $\alpha$ also increased the neighbourhood index for all network
 \caption{Dependence of neighborhood index on alpha for each network structure. Horizontal axis corresponds to distinct pairs of phi-threshold and   vertical axis is the neighborhood index. Each curve corresponds to a different value of alpha. Red curve corresponds to the largest value of alpha and it has the highest neighborhood index while the black curve corresponds to the smallest value of alpha which has the lowest value of intra idea distance.}
 \label {fig4}
 \end{figure}
-
+\end{frame}
+%
+\begin{frame}
 \paragraph{Dependence on $\phi$}
 By increasing $\phi$, the intra-idea distance decreased for all network structures. This correlation is quite an intuitive result since $\phi$ is the probability of deleting a connection between two nodes with different ideas and the formation of a new connection between two nodes with the same idea, and thus, by increasing $\phi$ the distance between like-minded nodes decreases. Unlike the $\alpha$ parameter, the effects of $\phi$ are more pronounced for the caveman and small world structures rather than for the random and scale-free networks (Figure \ref{fig5}).
 
@@ -73,7 +263,9 @@ On the other hand, the effects of $\phi$ on the neighborhood index varied betwee
 \caption{Dependence of neighborhood index on phi for each network structure. Horizontal axis corresponds to distinct pairs of alpha-threshold and   vertical axis is the neighborhood index. Each curve corresponds to a different value of phi. Increasing phi leads to increase neighborhood distance for Random and Scale free networks while increasing phi causes the neighborhood index to be decreased for Cavemen Network. For Small world network there is no significant dependence of neighborhood index on phi.}
 \label {fig6}
 \end{figure}
-
+\end{frame}
+%
+\begin{frame}
 \paragraph{Dependence on $\delta$}
 Increasing values of the complex contagion threshold $\delta$ slightly decreased the intra-idea distance for the caveman and small world network structures (Figure \ref{fig7}). 
 
@@ -96,9 +288,11 @@ No correlation was found between the neighbourhood index of the small world, sca
 \caption{Dependence of neighborhood index on complex contagion threshold. Horizontal axis corresponds to distinct pairs of alpha-phi and vertical axis is neighborhood index. Each curve corresponds to a different value of complex contagion threshold. Red curve corresponds to the largest value of complex contagion threshold which has the largest value of neighborhood index while black curve corresponds to the smallest value of complex contagion threshold and it has the smallest neighborhood index.}
 \label {fig8}
 \end{figure}
-
-
-\subsubsection{Frequency of Dominance}
+\end{frame}
+%
+\begin{frame}
+%\subsubsection
+{Frequency of Dominance}
 
 This feature is interesting if one considers scientific society. How dominant are dominant ideas in the scientific community? Does the structure of the community influence this dominance? For all parameter combinations and for all network structures in our simulations, the frequency of dominance of ideas increased with time. This may suggest that none of these structures impede the adoption of new ideas. More surprisingly, however, the increase in dominance frequency progressed more quickly for the caveman network structure (Figure \ref{fig2}). Could it be that this structure encourages nodes to adopt dominant ideas more easily? This may not be generalizable because the results are quite sensitive to parameter values due to the stochasticity of the simulations. For example, Figure \ref{fig2} shows a different combination of parameters, and here the faster increase in the dominance is not observed for the caveman structure.
 
@@ -111,9 +305,9 @@ This feature is interesting if one considers scientific society. How dominant ar
 \label {fig2}
 \end{figure}
 
-
-
-
+\end{frame}
+%
+\begin{frame}
 \subsection{Effects of Idea Distribution on Network Structure}
 
 
@@ -153,8 +347,11 @@ While the networks always remained fully connected (Figure \ref{fig9}), the rema
 \label {fig13}
 \end{figure}
 
-
-\subsubsection{Clustering Coefficient}
+\end{frame}
+%
+\begin{frame}
+%\subsubsection
+{Clustering Coefficient}
 
 The clustering coefficient of resulting networks varied with the type of idea distribution. When nodes in the same cave shared the same idea (parallel distribution), the clustering coefficient was larger (Figure \ref{fig10}). Additionally, the clustering coefficients for both the random and the anti-parallel idea distributions decreased in a similar manner regardless of the parameter combinations. Both of these results are intuitive since less rewiring would have taken place for the parallel distribution case, and the high clustering coefficient of the caveman structure would have been conserved, whereas more rewiring would have ocurred for the two other distributions, thus decreasing the clustering coefficients.
 
@@ -189,7 +386,11 @@ Increasing values of $\delta$, however, only slightly increased the clustering c
 \label {fig19}
 \end{figure}
 
-\subsubsection{Average Path Length}
+\end{frame}
+%
+\begin{frame}
+%\subsubsection
+{Average Path Length}
 The average path length of resulting networks was larger when a parallel idea distribution was used (Figure \ref{fig9}). This is not surprising, since the structure of the caveman network was more preserved (because most nodes were already connected to like-minded nodes and did not need to rewire), and its average path length is larger than that of more randomized networks, such as the ones resulting from a larger amount of rewiring. 
 \paragraph{Dependence on parameters}
 Increasing $\phi$, regardless of the idea distribution, decreased the average path length. This effect was more prononced for the random and anti-parallel idea distribution cases (Figure \ref{fig14}). This is another intuitive result since more rewiring naturally disturbs the rigid structure of a caveman network, thereby decreasing its large average path length; rewiring also occurs less frequently in the parallel idea distribution case because most nodes are already connected to like-minded nodes.
@@ -213,9 +414,11 @@ Changing values of $\delta$ (which requires more than one neighbouring node to h
 \caption{ Dependence of average path length on complex contagion threshold for each idea distribution. Horizontal axis corresponds to distinct pairs of alpha-phi and vertical axis is the average path length. Each curve corresponds to a different value of complex contagion threshold. There is no dependence on complex contagion for average path length with any idea distribution.}
 \label {fig17}
 \end{figure}
-
-
-\subsubsection{Network Diameter}
+\end{frame}
+%
+\begin{frame}
+%\subsubsection
+{Network Diameter}
 Similar to the clustering coefficient and the average path length, the network diameter was larger when the parallel idea distribution was applied (Figure \ref{fig9}). This distribution encouraged the structure of the caveman network to remain mostly unchanged, and thus the farthest distance between two nodes was larger than for the case of random or anti-parallel distributions, where more rewiring occured. 
 \paragraph{Dependence on parameters}
 As $\phi$ increased, the network diameter decreased for all idea distributions, and slightly less for the parallel distribution (Figure \ref{fig15}). Rewiring a caveman network intuitively may decrease the network diameter by connecting more of its caves.
@@ -239,14 +442,16 @@ Similar to the average path length, values of $\delta$ did not change the behavi
 \label {fig15}
 \end{figure}
 
-
-
-
-\subsubsection{Degree Distribution}
+\end{frame}
+%
+\begin{frame}
+%\subsubsection
+{Degree Distribution}
 Random graphs have a somewhat normally distributed degree distribution. Scale-free graphs, on the other hand, have a degree distribution that follows a scale-free power-law. We observed that the degree distribution of the networks depended on the idea distribution (Figure \ref{fig10}). A parallel idea distribution resulted in a degree distribution similar to that of a scale-free graph, which is not surprising. Caveman graphs have two or three different degrees for their nodes, and allowing for some rewiring would 'smooth' out this discrete distribution. Similar to previous results, the random and anti-parallel idea distributions behaved similarly: their degree distribution was similar to that of random graphs. It is interesting to see such a visible difference in these distributions over relatively few time steps (1000 steps), regardless of the parameter combinations. 
 
 
-\subsection{Discussion}
+%\subsection
+{Discussion}
 
 As previously mentioned, we observed that some features of the idea distribution varied with the type of network structure. We also observed that some features of the network structure varied with the kind of idea distribution implemented. Some of these results were intuitive and expected, while others were not.
 
@@ -254,3 +459,65 @@ Network structure mainly influenced two features of the idea distribution: the i
 
 
 Four of the five features of the network structure changed with different idea distributions. The connected component interestingly remained one, regardless of the idea distribution and parameter values. Feature values of the anti-parallel and random idea distributions differed from those of the parallel distribution. Most features changed as expected: the clustering coefficient, average path length, and network diameter were larger when the parallel idea distribution was used as compared to the other two, and their values were similar to those of a caveman network structure. The clustering coefficient of the anti-parallel idea distribution networks did decrease, as expected. The degree distribution did increase in variance (becoming more similar to a normal distribution) for the networks that were initiated with a random or anti-parallel idea distribution, but the degree distribution of the parallel idea distribution networks resembled that of a scale-free power law. Values of $\phi$ influenced the features of the random and antiparallel distribution networks the most. However, the structure features of the networks with the random idea distribution were not more sensitive to parameter values as would have been expected; they behaved similar to those of the networks with the anti-parallel idea distribution. Values of $\delta$ only correlated with changes in the clustering coefficient of the networks with a parallel idea distribution, and only weakly. Values of $\alpha$ did not correlated with any changes of feature values. 
+
+\end{frame}
+%
+\begin{frame}
+\end{frame}
+%
+\begin{frame}
+\frametitle{Summary and Outlook}
+To conclude our simulation study, our results support the general idea that network structure and qualities of the ideas held in them may mutually influence each other. The more rigid the structure of a network was, the more likely that the intra-idea distance and neighbourhood index of the network was larger. These two features varied more with the innovation rate $\alpha$ for less structured networks, and varied more with the complex contagion threhold $\delta$ for the most rigid structure - the caveman network. The average dominance time seemed to vary more with parameter values ($\phi$, $\delta$, and $\alpha$) than with the network structures, whereas the frequency of dominance of ideas did not decrease on average in the long run with any network structure.
+
+A network in which the pattern of ideas held by the nodes are `in accord' within the clusters of the caveman network maintained more of the structure features of a caveman network. These values varied with values of rewiring probabilities $\phi$ and complex contagion threholds $\delta$. Networks with a random pattern of ideas or with a pattern with more `disaccord' within the clusters resulted in a structure that began to resemble a random graph more than a caveman network. These networks' values varied more with the parameter $\phi$ of rewiring. Nodes given the chance to rewire with nodes that share the same idea had more opportunity to do so in the random and `disaccord' idea patterns than in the pattern which already had much accord.
+
+Thus, in addition to the structure of networks and the pattern of ideas in them, complex contagion thresholds, innovation rates, and the probability of creating new connections (while reflecting `preferences' of being connected with like-minded others) tend to influence features of the network. Several extensions to the proposed model could be investigated to better understand the relationships between network structure and idea distribution.
+\end{frame}
+%
+\begin{frame}
+\paragraph{Rewiring criteria}
+Future simulations may compare the emerging features of idea distributions not just between network structures, but also between different rewiring criteria. It is not clear how much of the features of the idea distribution in this simulation study was a result of the network structure or of the `preference' that nodes had in rewiring to like-minded nodes. Therefore, these results could be compared to (1) random rewiring or, to allow structure to play a larger role, (2) to allow random rewiring to nodes that are at most a distance of three nodes away. This is somewhat more realistic since most people connect with individuals who are somewhat in their vicinity through mutual connections. 
+
+\paragraph{Complex contagion and innovation}
+Considering complex contagion, novel ideas in our model were at a disadvantage for spreading in the network. Allowing novel ideas to have a larger influence weight may be one way to grant the ability of them to spread to other nodes. Alternatively, the complex contagion threshold for novel ideas may be lowered.
+
+\paragraph{Random idea adoption}
+Future simulations may investigate the effects of network structure on idea distributions by comparing to a `benchmark' model. This model would update the ideas of nodes at random, and thus the effects of connections may be better observed within network structures and then compared between network structures.
+\end{frame}
+%
+\begin{frame}
+\frametitle{References}
+\end{frame}
+%
+\begin{frame}
+\frametitle{Outline}
+\begin{block}
+{Why Beamer?}
+Does anybody need an introduction to Beamer?
+I don't think so.
+\end{block}
+% Extra carriage return causes problem with verbatim %
+\end{frame}
+ 
+\begin{frame}[fragile]  % notice the fragile option, since the body
+			% contains a verbatim command
+Example of the \verb|\cite| command to give a reference is below:
+Example of citation using \cite{key1} follows on.
+\end{frame}
+ 
+\begin{frame}
+\frametitle{References}
+\footnotesize{
+\begin{thebibliography}{99}
+ \bibitem[Label1, 2010]{key1} Author's name (1987)
+ \newblock Title of the paper.
+ \newblock \emph{Journal Name} 55(4), 765 -- 799.
+\end{thebibliography}
+}
+\end{frame}
+ 
+\begin{frame}
+\centerline{The End}
+\end{frame}
+% End of slides
+\end{document} 
