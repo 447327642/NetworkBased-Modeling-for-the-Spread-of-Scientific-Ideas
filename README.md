@@ -5,7 +5,7 @@
 > * Group participants' names: 
 Mayra Bermudez,
 Sarah Grimm,
-Rzgar Hosseini
+Sayed-Rzgar Hosseini
 
 > * Project Title: Network-Based Modeling for the Spread of Scientific Ideas
 

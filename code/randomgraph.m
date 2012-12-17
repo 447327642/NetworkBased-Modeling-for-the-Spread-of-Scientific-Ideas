@@ -5,7 +5,7 @@
 %%% Authors: Stefan Brugger and Cristoph Schwirzer, 2011 %%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-function  final= step1_randomgraph(n, p)
+function  final= step1_randomgraph(2, .5)
 % Generates an undirected random graph (without self-loops) of size n (as
 % described in the Erdoes-Renyi model)
 %
@@ -32,18 +32,18 @@ function  final= step1_randomgraph(n, p)
 % faster way for large values of n.
 
 % generate a vector of n values chosen u.a.r. from (0,1)
-v = rand(1, n);
+v = rand(1, 3);
 % Sort them and calculate the binomial cumulative distribution function with
 % parameters n and p at values 0 to n. Afterwards match the sorted random
 % 0-1-values to those cdf-values, i.e. associate a binomial distributed value
 % with each value in r. Each value in v also corresponds to a value in r:
 % permute the values in rowSize s.t. they correspond to the order given in v.
 [r index] = sort(v); % i.e. v(index) == r holds
-rowSize = zeros(1, n);
+rowSize = zeros(1, 3);
 j = 0;
-binoCDF = cumsum(binopdf(0:n, n, p));
-for i = 1:n
-    while j<n && binoCDF(j+1)<r(i)
+binoCDF = cumsum(binopdf(0:3, 3, p));
+for i = 1:3
+    while j<3 && binoCDF(j+1)<r(i)
         j = j + 1;
     end
     rowSize(i) = j;
@@ -55,9 +55,9 @@ nNZ = sum(rowSize);
 I = zeros(1, nNZ);
 J = zeros(1, nNZ);
 j = 1;
-for i = 1:n
+for i = 1:3
     I(j:j+rowSize(i)-1) = i;
-    J(j:j+rowSize(i)-1) = randsample(n, rowSize(i));
+    J(j:j+rowSize(i)-1) = randsample(3, rowSize(i));
     j = j + rowSize(i);
 end
 
